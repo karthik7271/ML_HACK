@@ -3,6 +3,7 @@ name = "dadi"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
+    "edge-tts>=7.2.8",
     "fastapi>=0.141.1",
     "joblib>=1.6.0",
     "networkx>=3.7",

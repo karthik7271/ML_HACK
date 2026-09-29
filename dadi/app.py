@@ -12,7 +12,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
-from fastapi.responses import FileResponse, PlainTextResponse
+from fastapi.responses import FileResponse, PlainTextResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -23,6 +23,8 @@ from dadi.data.generate import SCAM_TYPES  # noqa: E402
 from dadi.detector import DEFAULT_PATH, Detector  # noqa: E402
 from dadi.eval_roleplay import ROLEPLAY  # noqa: E402
 from dadi.persona import Persona  # noqa: E402
+from dadi.scammer import ScammerBot  # noqa: E402
+from dadi import voice  # noqa: E402
 from dadi.session import CallSession, CallStore  # noqa: E402
 from dadi.tactics import TacticBandit  # noqa: E402
 
@@ -43,6 +45,12 @@ store = CallStore(DATA / "calls.jsonl")
 # for the role-play evaluation set.
 finished: OrderedDict[str, dict] = OrderedDict()
 MAX_FINISHED = 50
+DEMO_TURNS = 8
+DEMO_HANGUP = [
+    "Arre madam aap rehne do, poora time barbaad kar diya aapne!",
+    "Budhiya ne dimaag kharaab kar diya, phone rakho!",
+    "Bas bas, main phone rakh raha hoon, aapse nahi hoga.",
+]
 
 app = FastAPI(title="Dadi")
 
@@ -113,6 +121,13 @@ def graph() -> dict:
     return network.to_json(network.build(store.all()))
 
 
+@app.get("/api/tts")
+async def tts(text: str, who: str = "dadi") -> StreamingResponse:
+    if who not in ("dadi", "scammer") or not text.strip():
+        raise HTTPException(422, "bad request")
+    return StreamingResponse(voice.stream(text, who), media_type="audio/mpeg")
+
+
 @app.get("/api/report/{call_id}", response_class=PlainTextResponse)
 def call_report(call_id: str) -> str:
     record = store.get(call_id)
@@ -126,13 +141,23 @@ def call_report(call_id: str) -> str:
 async def call(ws: WebSocket) -> None:
     await ws.accept()
     session: CallSession | None = None
+    bot: ScammerBot | None = None
     try:
         while True:
             msg = await ws.receive_json()
             kind = msg.get("type")
             if kind == "start":
                 session = CallSession(detector, bandit, persona, store)
-                await ws.send_json({"type": "started", **session.snapshot(), "persona_mode": persona.mode})
+                bot = ScammerBot(persona.llm, scam_type=msg.get("scam_type")) if msg.get("demo") else None
+                await ws.send_json({"type": "started", **session.snapshot(), "persona_mode": persona.mode,
+                                    "demo": bot is not None})
+            elif kind == "auto_next" and session and bot and session.state != "ended":
+                if bot.turn >= DEMO_TURNS:
+                    await ws.send_json({"type": "caller_line", "text": bot.rng.choice(DEMO_HANGUP), "hangup": True})
+                    continue
+                line = await bot.next_line(session.history)
+                await ws.send_json({"type": "caller_line", "text": line})
+                await ws.send_json(await session.on_caller(line))
             elif kind == "caller" and session and session.state != "ended" and msg.get("text", "").strip():
                 await ws.send_json(await session.on_caller(msg["text"]))
             elif kind == "tick" and session:

@@ -81,6 +81,10 @@ class Prediction:
 
 
 class Detector:
+    # Call-policy thresholds, tuned on validation calls by dadi.train.
+    engage_at = 0.8
+    handoff_below = 0.3
+
     def __init__(self, scam: Pipeline, scam_type: Pipeline, tactics: Pipeline, tactic_labels: list[str]):
         self.scam = scam
         self.scam_type = scam_type

@@ -232,6 +232,85 @@ LEGIT: dict[str, list[list[str]]] = {
     ],
 }
 
+# More hard negatives: genuine calls that mention banks, police, bills, fees and
+# payments, but point to official channels / in-person visits instead of
+# demanding action on the call. Added after the first error analysis showed
+# these categories drove most false alarms.
+_MORE_LEGIT: dict[str, list[list[str]]] = {
+    "bank_genuine": [
+        ["Hello, {bank} relationship manager bol raha hoon, aapke account ke baare mein ek update tha.",
+         "Namaste ji, {bank} se, aapka naya cheque book branch mein aa gaya hai.",
+         "Hi, calling from {bank}, your locker rent is due next month, just a reminder."],
+        ["Jab time mile branch aa jaiye, koi jaldi nahi hai.",
+         "Aapko kuch share nahi karna hai phone pe, bas branch mein sign karna hai.",
+         "You can also check this in your net banking under the service requests section.",
+         "Aapke registered email pe bhi details bhej di hain, dekh lijiye."],
+        ["Koi doubt ho toh customer care ka number card ke peeche likha hai, wahi call kijiye.", "Aapka din shubh ho."],
+    ],
+    "bank_fraud_alert": [
+        ["Namaste, {bank} fraud monitoring team, aapke card pe abhi ek transaction hua hai, kya wo aapne kiya tha?",
+         "Hello, this is {bank} calling to confirm a card payment made a few minutes ago.",
+         "Sir, {bank} se automated alert call, aapke card se online payment hua hai."],
+        ["Agar aapne nahi kiya toh card ke peeche wale number pe call karke block karwa dijiye.",
+         "We will never ask for your OTP, PIN or CVV, please don't share them with anyone.",
+         "Aap app mein jaake khud card block kar sakte hain, humein koi details mat dijiye.",
+         "If this was you, no action is needed."],
+        ["Theek hai, dhanyavaad, surakshit rahiye.", "Thank you, have a good day."],
+    ],
+    "police_genuine": [
+        ["Namaste, {city} police se, aapki complaint number ke baare mein call kiya tha.",
+         "Hello madam, beat constable bol raha hoon, society mein verification chal raha hai.",
+         "Traffic police se call hai, aapki gaadi ka challan pending dikha raha hai."],
+        ["Challan aap official parivahan website pe hi bhariye, kisi ko cash mat dijiye.",
+         "Aap jab free ho thane aa jaiye, apna ID proof le aana.",
+         "Kuch pay nahi karna hai, bas statement dena hai station pe.",
+         "Aapka passport verification ho gaya hai, report aage bhej di hai."],
+        ["Aur koi pareshani ho toh 112 pe call kar sakte hain.", "Chalo theek hai, namaste."],
+    ],
+    "utility_genuine": [
+        ["Hello, bijli vibhag se, aapke area mein naya smart meter lagna hai, kal technician aayega.",
+         "Namaste, water supply office se, kal subah paani nahi aayega pipeline repair ki wajah se.",
+         "Hi, gas agency se bol rahe hain, aapka KYC update pending hai, agency aake kara lijiye."],
+        ["Aapka bill last date se pehle official app pe bhar dijiye, late fee nahi lagegi.",
+         "Technician ka ID card zaroor check kar lena, koi cash nahi dena hai.",
+         "Aadhaar aur connection card lekar agency office aa jaiye."],
+        ["Koi sawal ho toh helpline 1912 pe call kijiye.", "Thank you ji."],
+    ],
+    "college_office": [
+        ["Hello beta, accounts section se, aapki second installment ki fees pending hai.",
+         "Hi, this is the exam cell, your hall ticket is ready for download.",
+         "Namaste, scholarship office se, aapke documents verify ho gaye hain."],
+        ["Fees sirf college ERP portal se ya bank challan se jama karni hai.",
+         "Aap portal pe login karke download kar lijiye, kisi ko password mat batana.",
+         "Scholarship seedha aapke bank account mein aayegi, aapko kuch pay nahi karna."],
+        ["Last date 15 tareekh hai, yaad rakhna.", "Okay, all the best for exams."],
+    ],
+    "telemarketing": [
+        ["Good afternoon ma'am, {company} se, aapke liye special discount offer hai.",
+         "Hello sir, health insurance ka naya plan aaya hai, 2 minute sunenge?",
+         "Hi, main real estate company se, {city} mein naye flats launch hue hain."],
+        ["Aap chahein toh humari website pe details dekh sakte hain.",
+         "Koi pressure nahi hai sir, aap soch ke batana.",
+         "Main aapko brochure email kar deta hoon, pasand aaye toh call back kijiye."],
+        ["Theek hai, aapka time dene ke liye dhanyavaad.", "Okay sir, have a nice day."],
+    ],
+    "friend": [
+        ["Hey {friend} here, kya kar raha hai?", "Arre sun, kal ki party ka plan kya hai?"],
+        ["Mere bank ka app kaam nahi kar raha, tera chal raha hai kya?",
+         "Yaar mujhe police verification ke liye thane jaana hai kal, saath chalega?",
+         "Bijli ka bill itna zyada aaya is baar, 3000 rupaye.",
+         "Mess fees bharni hai portal pe, link bhej de na."],
+        ["Chal theek hai, baad mein milte hain.", "Okay bye, call karta hoon raat ko."],
+    ],
+}
+for _k, _stages in _MORE_LEGIT.items():
+    if _k not in LEGIT:
+        LEGIT[_k] = [list(st) for st in _stages]
+    else:
+        for _i, _st in enumerate(_stages):
+            LEGIT[_k][_i] = LEGIT[_k][_i] + _st
+
+
 FILLERS = ["haan", "ji", "achha", "sir", "madam", "dekhiye", "suniye", "ok", "matlab", "hello"]
 SPOKEN = {"0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five",
           "6": "six", "7": "seven", "8": "eight", "9": "nine"}
@@ -291,18 +370,34 @@ def _expand(variants: list, paras: dict[str, list[str]]) -> list:
     return out
 
 
-def build_pools(seed: int, test_frac: float = 0.25, augment: bool = True) -> dict[str, dict]:
+def build_pools(seed: int, test_frac: float = 0.25, augment: bool = True, val_frac: float = 0.0) -> dict[str, dict]:
+    """Split each move's hand-written phrasings into train / (val) / test pools,
+    then add each phrasing's paraphrases to the pool it landed in.
+
+    The test split depends only on `seed`, so it is identical with or without
+    a validation split. Validation phrasings come out of the train side and are
+    disjoint from it; a stage with only one train phrasing has no validation
+    phrasing, and validation calls skip that stage.
+    """
     rng = random.Random(seed)
+    val_rng = random.Random(seed + 100)
     paras = load_paraphrases() if augment else {}
-    pools: dict[str, dict] = {"train": {"scam": {}, "legit": {}}, "test": {"scam": {}, "legit": {}}}
-    for stype, stages in SCAMS.items():
-        tr, te = zip(*(_split_pool(stage, rng, test_frac) for stage in stages))
-        pools["train"]["scam"][stype] = [_expand(v, paras) for v in tr]
-        pools["test"]["scam"][stype] = [_expand(v, paras) for v in te]
-    for ltype, stages in LEGIT.items():
-        tr, te = zip(*(_split_pool(stage, rng, test_frac) for stage in stages))
-        pools["train"]["legit"][ltype] = [_expand(v, paras) for v in tr]
-        pools["test"]["legit"][ltype] = [_expand(v, paras) for v in te]
+    names = ("train", "val", "test")
+    pools: dict[str, dict] = {n: {"scam": {}, "legit": {}} for n in names}
+    for kind, table in (("scam", SCAMS), ("legit", LEGIT)):
+        for name, stages in table.items():
+            split = {n: [] for n in names}
+            for stage in stages:
+                tr, te = _split_pool(stage, rng, test_frac)
+                va: list = []
+                if val_frac and len(tr) >= 2:
+                    tr, va = _split_pool(tr, val_rng, val_frac)
+                split["train"].append(_expand(tr, paras))
+                split["val"].append(_expand(va, paras))
+                split["test"].append(_expand(te, paras))
+            for n in names:
+                if any(split[n]):  # a type with no phrasings in this split is left out of it
+                    pools[n][kind][name] = split[n]
     return pools
 
 
@@ -312,7 +407,7 @@ def make_call(pool: dict, rng: random.Random, scam_ratio: float = 0.5) -> dict:
         stages = pool["scam"][stype]
         turns = []
         for i, stage in enumerate(stages):
-            if i > 0 and rng.random() < 0.2:  # scammers skip steps
+            if not stage or (i > 0 and rng.random() < 0.2):  # scammers skip steps
                 continue
             for _ in range(1 if rng.random() < 0.75 else 2):
                 text, tactics = rng.choice(stage)
@@ -320,17 +415,28 @@ def make_call(pool: dict, rng: random.Random, scam_ratio: float = 0.5) -> dict:
         return {"label": "scam", "scam_type": stype, "turns": turns}
     ltype = rng.choice(list(pool["legit"]))
     turns = [{"text": _asr_noise(_fill(rng.choice(stage), rng), rng), "tactics": []}
-             for stage in pool["legit"][ltype]]
+             for stage in pool["legit"][ltype] if stage]
     return {"label": "legit", "scam_type": None, "legit_type": ltype, "turns": turns}
 
 
-def generate(n: int, seed: int = 7, test_frac: float = 0.25, augment: bool = True) -> tuple[list[dict], list[dict]]:
-    pools = build_pools(seed, test_frac, augment)
-    rng = random.Random(seed + 1)
+def generate_splits(n: int, seed: int = 7, test_frac: float = 0.25, augment: bool = True,
+                    val_frac: float = 0.0) -> dict[str, list[dict]]:
+    pools = build_pools(seed, test_frac, augment, val_frac)
     n_test = int(n * test_frac)
-    train = [make_call(pools["train"], rng) for _ in range(n - n_test)]
-    test = [make_call(pools["test"], rng) for _ in range(n_test)]
-    return train, test
+    # separate random streams so the test calls don't depend on the train/val split
+    test_rng, train_rng, val_rng = random.Random(seed + 1), random.Random(seed + 3), random.Random(seed + 2)
+    out = {
+        "test": [make_call(pools["test"], test_rng) for _ in range(n_test)],
+        "train": [make_call(pools["train"], train_rng) for _ in range(n - n_test)],
+    }
+    if val_frac:
+        out["val"] = [make_call(pools["val"], val_rng) for _ in range(n_test)]
+    return out
+
+
+def generate(n: int, seed: int = 7, test_frac: float = 0.25, augment: bool = True) -> tuple[list[dict], list[dict]]:
+    splits = generate_splits(n, seed, test_frac, augment)
+    return splits["train"], splits["test"]
 
 
 def main() -> None:

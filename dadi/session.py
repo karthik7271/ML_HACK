@@ -14,9 +14,7 @@ from dadi.extract import Intel, extract
 from dadi.persona import HANDOFF, Persona
 from dadi.tactics import TacticBandit
 
-ENGAGE_AT = 0.8     # scam probability at which Dadi takes over
-HANDOFF_BELOW = 0.3  # after MIN_SCREEN_TURNS, calls this clean go back to the user
-MIN_SCREEN_TURNS = 2
+MIN_SCREEN_TURNS = 2  # thresholds come from the detector (tuned on validation calls)
 
 
 class CallStore:
@@ -85,9 +83,9 @@ class CallSession:
 
         move, source = None, "scripted"
         if self.state == "screening":
-            if self.scam_prob >= ENGAGE_AT:
+            if self.scam_prob >= getattr(self.detector, "engage_at", 0.8):
                 self.state, self.engaged_at = "engaged", self.clock()
-            elif caller_turns >= MIN_SCREEN_TURNS and self.scam_prob < HANDOFF_BELOW:
+            elif caller_turns >= MIN_SCREEN_TURNS and self.scam_prob < getattr(self.detector, "handoff_below", 0.3):
                 self.state = "handoff"
 
         if self.state == "engaged":

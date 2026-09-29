@@ -50,7 +50,7 @@
       </div>
 
       <div class="transcript" id="transcript">
-        <div class="empty">Press <b>Incoming call</b>, then play the scammer: speak into the mic or type below.</div>
+        <div class="empty">Press <b>Incoming call</b> and play the scammer (speak or type), or press <b>▶ Watch a demo call</b> to watch an AI scammer try to scam Dadi.</div>
       </div>
 
       <div class="controls">
@@ -61,6 +61,17 @@
           <option value="hi-IN">हिन्दी</option>
         </select>
         <button id="btn-end" class="danger" disabled>Scammer hangs up</button>
+      </div>
+      <div class="controls demo-row">
+        <button id="btn-demo">▶ Watch a demo call</button>
+        <select id="demo-type" title="Scam the AI scammer will try">
+          <option value="">Random scam</option>
+          <option value="digital_arrest">Digital arrest</option>
+          <option value="kyc_bank">Bank / KYC</option>
+          <option value="courier_parcel">Courier / customs</option>
+          <option value="electricity_bill">Electricity bill</option>
+          <option value="lottery_prize">Lottery / prize</option>
+        </select>
       </div>
       <form id="typer" class="typer">
         <input id="typed" placeholder="Type what the scammer says…" autocomplete="off" disabled />

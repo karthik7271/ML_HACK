@@ -1,0 +1,1741 @@
+{
+ "Hello {name}, main {officer} bol raha hoon {city} Crime Branch se.": [
+  "Hey {name}, main {officer} bol raha hoon {city} Crime Branch se, bhai!",
+  "Good morning {name}, this is {officer} from the {city} Crime Branch. I need to talk to you.",
+  "Namaste {name}, main {officer} hoon, {city} Crime Branch ke naam se call kar raha hoon.",
+  "Hello {name}, {officer} speaking from the {city} Crime Branch – please listen carefully.",
+  "Hey {name}, main {officer} aapko {city} Crime Branch se bol raha hoon, dhyaan se sunein!",
+  "Dear {name}, this is {officer} from the Crime Branch, {city}. I have an urgent matter for you."
+ ],
+ "Good afternoon, this is {officer} from CBI {city} office, am I speaking to {name}?": [
+  "Good afternoon, sir/madam. I am {officer} from the CBI {city} office calling, is this {name}?",
+  "Good afternoon, this is {officer} from the CBI {city} office. May I confirm that I am speaking to {name}?",
+  "Hello, {name}. This is {officer} with CBI's {city} office. Am I on the right line?",
+  "Good day, this is {officer} from the CBI {city} branch. I need to verify if I am talking to {name}?",
+  "Good afternoon, this is {officer} calling from CBI {city} office. Am I speaking with {name}?"
+ ],
+ "Namaste {name}, main TRAI se bol raha hoon, aapka number do ghante mein band ho jayega.": [
+  "Hi {name}, this is TRAI. Your number will be blocked in two hours if you don’t act now.",
+  "Good day {name}, this is a call from TRAI. If we don’t verify your number in the next 120 minutes, it will be permanently blocked.",
+  "Hey {name}, TRAI here. You have exactly two hours to avoid your line getting suspended.",
+  "Hello {name}, this is TRAI. You must resolve this within the next 120 minutes or your number will be cancelled.",
+  "Namaskar {name}, main TRAI se baat kar raha hoon. Agar aap do ghante ke andar kaam nahi karte, toh aapka number band ho jayega."
+ ],
+ "Hello, {city} cyber cell se call hai, aapke naam pe ek complaint register hui hai.": [
+  "Hi, aapko {city} cyber cell se call aa raha hai, aapke naam pe ek complaint register hua hai.",
+  "Good day, this is {city} cyber cell calling. We have registered a complaint under your name.",
+  "Namaste, {city} cyber cell ki taraf se aapko call hai. Aapke naam par complaint file hui hai.",
+  "Hello sir/madam, {city} cyber cell ki taraf se aapke naam pe complaint register ho gayi hai.",
+  "Aapka nam {city} cyber cell se call aa raha hai. Complaint aapke naam pe register hui hai, thoda check kar lijiye.",
+  "Hey, {city} cyber cell ke log baat kar rahe hain. Aapke naam pe ek complaint register hai, isko solve karna zaroori hai."
+ ],
+ "This call is from Narcotics Control Bureau, {officer} speaking, please confirm your name.": [
+  "Narcotics Control Bureau ka call hai, main {officer} bol raha/rahi hoon, aapka naam bataye.",
+  "This is a call from the Narcotics Control Bureau, {officer} speaking. Please confirm your name.",
+  "Sir/Madam, NCB ka call hai, main {officer} hoon. Aapka naam bataiye, please.",
+  "I'm calling on behalf of the Narcotics Control Bureau, {officer} speaking. Kindly confirm your name.",
+  "Hey, this is the Narcotics Control Bureau, {officer} here. Can you tell me your name?",
+  "Narcotics Control Bureau ke taraf se call hai, main {officer} hoon. Kripya apna naam bataye."
+ ],
+ "Main {officer}, CBI headquarters se, aapka Aadhaar ek money laundering case mein aaya hai.": [
+  "Hello {officer}, from CBI HQ—your Aadhaar is involved in a money laundering investigation.",
+  "Sir/Madam {officer}, this is CBI Headquarters; your Aadhaar has surfaced in a money‑laundering case.",
+  "Hey {officer}! CBI HQ here; your Aadhaar is part of a money laundering case, bhai.",
+  "Namaste {officer}, CBI Headquarters speaking—your Aadhaar is under scrutiny for money laundering.",
+  "Dear {officer}, this is CBI HQ; we have flagged your Aadhaar in a money‑laundering probe."
+ ],
+ "Aapke Aadhaar se ek parcel bheja gaya hai jisme {item} mila hai.": [
+  "Aapke Aadhaar se ek parcel bheja gaya hai jisme {item} mila hai. Please check it.",
+  "Aapke Aadhaar number par ek parcel bheja gaya hai, jisme {item} hai – kindly confirm.",
+  "Your Aadhaar has been used to dispatch a parcel containing {item}. Please verify it.",
+  "Aapke Aadhaar se ek package send kiya gaya, jisme {item} hai. Confirm kar dijiye, please.",
+  "Aapke Aadhaar ID par ek parcel bheja gaya hai, jisme {item} include hai. Please check and reply.",
+  "Aapke Aadhaar ke through ek parcel bheja gaya hai, jisme {item} maujood hai – please confirm as soon as possible."
+ ],
+ "Your Aadhaar is linked to a money laundering case, case number {case_no}.": [
+  "Sir/Madam, your Aadhaar is linked to a money laundering case, case number {case_no}.",
+  "Hey there! Just a quick heads-up—your Aadhaar’s tied to a money laundering case, case number {case_no}.",
+  "Please be advised that your Aadhaar has been linked to a money‑laundering case, case number {case_no}.",
+  "We have to inform you that your Aadhaar is linked to a money laundering case, case number {case_no}.",
+  "Listen up! Your Aadhaar is already linked to a money laundering case, case number {case_no}."
+ ],
+ "Aapke naam pe {city} mein ek bank account khula hai jisme crore rupaye ka hawala hua hai.": [
+  "Your name has a bank account opened in {city} with a crore rupees transfer pending.",
+  "Aapke naam ki ek account {city} mein khula hua hai, aur usme crore rupaye ka hawala maujood hai.",
+  "In {city}, a bank account in your name has been opened, holding a crores of rupees as a hawala.",
+  "Aapke naam ka account {city} mein khula hua hai, jisme crore rupaye ka hawala hai—abhi action lo.",
+  "Your name appears in a bank account opened in {city} that carries a crores transfer—urgent!"
+ ],
+ "There is an arrest warrant issued in your name by the {city} court.": [
+  "Aapke naam se ek arrest warrant issue hua hai, yeh {city} court ka order hai.",
+  "Sir, aapke naam par {city} court ne arrest warrant issue kiya hai – aapko turant action lena hoga.",
+  "Hello, there's an arrest warrant issued against you by the {city} court, so please handle it ASAP.",
+  "Arre bhai, {city} court ne aapke naam se arrest warrant liya hai, ab isko solve karo!",
+  "Attention: The {city} court has issued an arrest warrant in your name; you must address this immediately.",
+  "I’m calling because the {city} court has issued an arrest warrant for you; this needs urgent attention."
+ ],
+ "Aapke number se illegal advertisement aur harassment messages bheje gaye hain, FIR ho chuki hai.": [
+  "Sir, aapke phone number par illegal ads aur harassment messages bheje gaye hain. FIR already filed.",
+  "Hey, illegal ad aur harassment messages aapke number se ja rahe hain, FIR ho chuki hai, bas confirm karo.",
+  "Aapke number pe illegal ads bheje gaye hain aur harassment messages aa rahe hain. FIR submit ho chuki hai, thoda check karo.",
+  "Notice: aapke number se illegal advertisements aur harassment messages send kiye gaye hain. FIR already registered.",
+  "Boss, aapke number se illegal advertising aur harassment messages aage ja rahe hain. FIR file ho chuki hai, confirm karo."
+ ],
+ "Humare paas aapke khilaf supreme court ka order hai, aap abhi digital arrest mein ho.": [
+  "We've got a Supreme Court order against you, and you’re currently in digital arrest.",
+  "Supreme Court ne aapke khilaf order diya hai, aap ab digital arrest ke liye ready hain.",
+  "Sir, aap ke khilaf Supreme Court ka order hai. Aap abhi digital arrest mein hain, samjhe?",
+  "We have a Supreme Court directive against you – you’re now in a digital arrest situation.",
+  "Your name is on a Supreme Court order, and you’re in digital arrest right now, so act fast."
+ ],
+ "Aap ye call disconnect nahi karenge, warna local police aapko abhi arrest karegi.": [
+  "Aap please ye call disconnect nahi kare, otherwise local police abhi aapko arrest kar degi.",
+  "If you don't stay on this call, local police will arrest you right now.",
+  "Aap call disconnect karte hi local police aapko abhi arrest kar degi, so please stay on the line.",
+  "Aapka call disconnect na hua toh local police turant arrest kar degi.",
+  "Disconnecting the call will cause local police to arrest you immediately, so please stay connected."
+ ],
+ "Do not tell anyone in your family, this is a confidential national security matter.": [
+  "Kisi ko na batana, yeh ek confidential national security matter hai.",
+  "Please keep it to yourself; this is a confidential national security matter.",
+  "Discreetly, don’t inform your family—this is a confidential national security matter.",
+  "No one in your family should know, it’s a confidential national security matter.",
+  "We ask you not to share this with family; it’s a confidential national security matter.",
+  "Family ko na batana, kyunki yeh ek confidential national security matter hai."
+ ],
+ "Aap video call pe rahiye, camera on rakhiye, aap digital custody mein hain.": [
+  "Please stay on the video call, keep your camera on, you are in digital custody.",
+  "Aap video call par rahiye, camera on rakhiye; aap digital custody mein hain, samjhi?",
+  "Stay on the video call and keep the camera on – you are now in digital custody, ok?",
+  "Aap video call par hamesha rahiye, camera on rakhiye, aap digital custody mein hai, dhyan rakhein.",
+  "Keep the video call active and camera on; you are now in digital custody, got it?"
+ ],
+ "Kisi ko bhi batana mat, na bete ko na pati ko, warna unko bhi case mein daal denge.": [],
+ "Room band kar lijiye aur akele baithiye, investigation chal rahi hai.": [
+  "Kindly close the room and sit alone, the investigation is underway.",
+  "Please close the room and sit by yourself – the investigation is in progress.",
+  "Room band karke akele baith jao, investigation chal rahi hai.",
+  "Close the room and sit alone, investigation is ongoing, so please comply.",
+  "Close the room immediately, sit alone, investigation is proceeding, so sit down."
+ ],
+ "If you hang up now it will be treated as non cooperation and police will reach your home in 30 minutes.": [
+  "If you hang up now, it'll be seen as non‑cooperation and the police will come to your home in 30 minutes.",
+  "If you hang up right now, they’ll consider it non‑cooperation and the police will be at your doorstep within 30 minutes.",
+  "If you hang up now, it'll be treated as non‑cooperation, and the police will reach your house in half an hour.",
+  "If you end the call now, the police will assume non‑cooperation and will arrive at your home in 30 minutes.",
+  "If you hang up now, it'll be seen as non‑cooperation and the police will get to your place within 30 minutes.",
+  "If you hang up right away, they'll think you're not cooperating and the police will be at your home in just 30 minutes."
+ ],
+ "Aapko verification ke liye apne saare paise RBI safe account mein transfer karne honge.": [
+  "Sir, verification ke liye aapke tamam paise RBI safe account pe transfer karne padenge.",
+  "Boss, verification ke liye aapke sabhi paise RBI safe account me bhejna hoga, samjhe?",
+  "Haan, verification ke liye aapko apne saare paisa RBI safe account mein bhejna padega, thik hai?",
+  "Listen, verification ke liye aapke paise RBI safe account mein transfer karna zaroori hai, samajh gaye?",
+  "Aapko verification ke liye apne tamam paise RBI safe account mein transfer karna zaroori hoga, samjhe?"
+ ],
+ "Send {amount} rupees to this UPI {upi} for verification, it will be refunded after investigation.": [
+  "Bhai, abhi hi {amount} rupees aapke {upi} par bhej dein, verification ke liye. Investigation ke baad refund ho jayega.",
+  "Kindly transfer {amount} rupees to this UPI {upi} for verification; it will be refunded once the investigation is complete.",
+  "Send {amount} rupees to the UPI {upi} right now for verification; we promise it'll be refunded after the investigation.",
+  "Hey, just transfer {amount} rupees to this UPI {upi} for verification – the amount will be returned after the investigation.",
+  "Please transfer {amount} rupees to {upi} for verification; the money will be refunded after the investigation is done.",
+  "Transfer {amount} rupees immediately to this UPI {upi} for verification. Rest assured, you will get a refund after the investigation."
+ ],
+ "Security deposit {amount} abhi transfer kijiye account number {account} mein.": [
+  "Hey, please transfer the security deposit {amount} right now to account {account}.",
+  "Security deposit of {amount} urgently bhejiye, 24 ghante ke andar account {account} me.",
+  "Kindly transfer the security deposit {amount} at once to our account {account}.",
+  "Security deposit {amount} abhi transfer karo account {account} mein, else delay will cause issues.",
+  "Security deposit {amount} abhi account {account} me bhej do, time is critical."
+ ],
+ "Aapke account ka paisa legal hai ya nahi check karna hai, isliye {amount} is account mein daaliye {account}.": [
+  "Bhai, aapke account ka paisa legal hai ki nahi, check karna hai. Toh {amount} ko {account} mein transfer karein, samajh gaye?",
+  "Sir/Madam, aapke account ka paisa legal hai ki nahi, iski jaanch karni hai. Kripya {amount} {account} mein jama karein.",
+  "Arre yaar, aapke account ka paisa legal hai ki nahi, check karna hai. Toh turant {amount} {account} mein bhej do.",
+  "Greetings, we need to verify if the money in your account is legal or not. Please deposit {amount} into {account} immediately.",
+  "Hey, check karna hai ki aapke account ka paisa legal hai ya nahi. So, {amount} ko {account} mein daal do, please."
+ ],
+ "Bail ke liye {amount} ka payment aaj hi karna padega, warna kal subah arrest.": [
+  "Bail ke liye {amount} ka payment aaj hi karna hoga, warna kal subah arrest ho jayega.",
+  "Bail ke liye {amount} ka payment aaj hi karna padta hai, warna kal subah arrest ka samna karna padega.",
+  "Bail ke liye {amount} ka payment aaj hi karna padega, warna kal subah arrest, samjhe?",
+  "Bail ke liye {amount} ka payment aaj hi karna zaroori hai, warna kal subah arrest hoga.",
+  "Bail ke liye {amount} ka payment aaj hi karna hoga, warna kal subah arrest ki jail mein aa jayega."
+ ],
+ "Jaldi kijiye, aapke paas sirf 30 minute hain.": [
+  "Hurry up, you only have 30 minutes left to respond.",
+  "Aapko turant action lena hoga, sirf 30 minute ka samay bacha hai.",
+  "Please act quickly – you have just 30 minutes to finalize this.",
+  "Samay kam bacha hai; abhi kaam kar dein, sirf 30 minute ka time available hai.",
+  "Apni baat jaldi se complete karein, sirf 30 minutes ka window aapke paas hai."
+ ],
+ "Transaction ke baad screenshot bhejiye WhatsApp pe {phone} pe.": [
+  "Transaction ke baad screenshot bhejiye WhatsApp pe {phone} pe, bhai.",
+  "After the transaction, kindly send the screenshot to WhatsApp on {phone}.",
+  "Transaction ke baad screenshot turant WhatsApp pe {phone} bheje, please.",
+  "Once the transaction completes, shoot a screenshot to my WhatsApp on {phone}.",
+  "Transaction ke baad screenshot ka WhatsApp pe {phone} bhej dein, urgent.",
+  "Please forward the screenshot after the transaction to WhatsApp on {phone} as soon as possible."
+ ],
+ "Aapka FD tod ke paisa bhejiye, ye court order hai.": [
+  "Kindly transfer your FD amount, this is a court order.",
+  "Please transfer your fixed deposit amount now, this is a legal order.",
+  "Aapka FD tod ke bheje, court order hai – abhi karein.",
+  "I’m calling regarding your FD; send the money immediately as per the court order.",
+  "Your FD amount, break it and send the money. This is a court order, so act fast."
+ ],
+ "Once verified, the money will come back within 24 hours with an RBI clearance certificate.": [
+  "After verification, your money will be returned within 24 hours along with an RBI clearance cert.",
+  "Sir, once we verify it, you’ll receive the money back within 24 hours, plus an RBI clearance certificate.",
+  "Once verified, the money will be refunded within 24 hours with an RBI clearance certificate – we’ve got it covered.",
+  "Once we confirm everything, you’ll get your money back within 24 hours, and we’ll send an RBI clearance certificate.",
+  "After verification, your money will be returned within 24 hours, along with the RBI clearance certificate, so no worries."
+ ],
+ "Hello {name}, main {bank} head office se bol raha hoon.": [
+  "Hello {name}, main {bank} head office se bol raha hoon, please listen carefully.",
+  "Hi {name}, I’m calling from {bank} head office – could you spare a minute?",
+  "Good day {name}, this is {bank} head office speaking, just a quick call for you.",
+  "Hey {name}, {bank} head office here, I need to discuss something important with you.",
+  "Namaste {name}, main {bank} ke head office se baat kar raha hoon, aap thoda waqt de sakte hain?",
+  "Hello {name}, this is {bank} head office. I have an urgent matter that requires your immediate attention."
+ ],
+ "Good morning sir, calling from {bank} KYC department.": [
+  "Good morning sir, this is from the KYC department of {bank}.",
+  "Hey sir, good morning! I’m calling from the KYC team at {bank}.",
+  "Good morning, sir. This is your KYC officer from {bank} speaking.",
+  "Sir, a quick hello! It’s the KYC desk of {bank} calling you now.",
+  "Good morning, sir. I’m on the KYC line with {bank} – we need to verify your account.",
+  "Morning sir, this is your KYC representative from {bank}. I need a few details from you."
+ ],
+ "{name}, aapka {bank} account aaj raat 12 baje block ho jayega.": [
+  "{name}, your {bank} account will be blocked at 12 o’clock tonight, so act fast!",
+  "Namaste {name}, aapke {bank} account ko aaj raat 12 baje block kiya jayega.",
+  "Hey {name}, your {bank} account’s going to be locked at midnight tonight, please do something!",
+  "{name}, aapka {bank} account 12 baje raat ko block ho jayega—this is urgent.",
+  "Attention {name}, your {bank} account will be blocked at 12:00 AM tonight, immediate action required."
+ ],
+ "Sir, RBI guidelines ke according aapka KYC pending hai.": [
+  "Sir, RBI guidelines ke mutabik aapka KYC pending hai, please process it ASAP.",
+  "Hello Sir, as per RBI rules your KYC is pending. Need to clear it immediately.",
+  "Sir, RBI ke guidelines ke hisaab se aapka KYC pending hai, jald se jald complete karein.",
+  "Hey Sir, RBI ka regulation ke mutabiq aapka KYC pending hai – let's finalize it right away.",
+  "Sir, according to RBI guidelines, your KYC is still pending. Please get it done without delay.",
+  "Sir, RBI ke directives ke anusar aapka KYC pending hai; we require immediate action."
+ ],
+ "Main {bank} customer care se bol rahi hoon, aapke debit card pe issue hai.": [
+  "Hey, this is {bank} customer care calling you—your debit card has a problem.",
+  "This is {bank} customer support, madam; I’m calling about an issue with your debit card.",
+  "Namaste, I’m from {bank} customer care. Your debit card has an issue, so we need to sort it out.",
+  "Hi, I’m speaking on behalf of {bank} customer care—your debit card is showing a problem, we need to fix it.",
+  "Hello, this is {bank} customer support calling. We’ve detected an issue on your debit card that requires immediate attention."
+ ],
+ "Aapka PAN card link nahi hai, isliye account freeze ho raha hai.": [
+  "Aapka PAN card link nahi hai, isliye account freeze ho raha hai, please link kar dein.",
+  "Sir/Madam, your PAN card is not linked; hence your account is being frozen – please act now.",
+  "Hey bhai, PAN card linked nahi hai, account freeze ho raha hai, jaldi link karo.",
+  "Your account is going to be frozen because the PAN card isn’t linked; immediate action required.",
+  "Bhai, PAN card link nahi hone ki wajah se account freeze ho raha hai, abhi link karna padega.",
+  "Your account is at risk of freezing as the PAN card is not linked; please link it immediately."
+ ],
+ "Your KYC has expired, your account will be suspended today.": [
+  "Bhai, tumhara KYC expired hai, aaj hi account suspend ho jayega.",
+  "Your KYC has expired, so your account will be suspended today.",
+  "Sir/Madam, your KYC has expired, hence your account will be suspended from today.",
+  "Hey buddy, your KYC is expired, account will be suspended today, so act now!",
+  "Your KYC has expired. If you do nothing, your account will be suspended today.",
+  "Sir, your KYC is expired and we have to suspend your account today. Please do it now."
+ ],
+ "Aapke credit card pe 49,999 ka suspicious transaction hua hai.": [
+  "We have detected a suspicious transaction of ₹49,999 on your credit card.",
+  "Aapke card pe 49,999 ka anokha transaction notice hua hai.",
+  "Sir/Madam, a 49,999 rupees suspicious charge has appeared on your credit card.",
+  "Your credit card shows an odd ₹49,999 transaction – we need to verify it.",
+  "Bhai, aapke credit card pe 49,999 ka weird transaction aaya hai, check karna hoga."
+ ],
+ "Aapke reward points expire ho rahe hain, 5000 rupaye ke points hain.": [
+  "Aapke reward points expire ho rahe hain, 5000 rupaye ke points hain. Pehle call karein!",
+  "Your reward points are about to expire, you have 5,000 rupees worth of points. Call now, don't miss out!",
+  "Aapke reward points expire ho rahe hain, 5000 rupaye ke points hain. Urgent! Call immediately to secure them.",
+  "Your reward points are going to expire soon—5,000 rupees in points. Call back right away before they vanish.",
+  "Aapke reward points expire ho rahe hain, 5000 rupaye ke points hain. Agar aapne abhi tak nahi kiya, toh jaldi call karein.",
+  "Hey! Your reward points are expiring soon, you have 5000 rupees in points. Call now to lock them in!"
+ ],
+ "Abhi aapke phone pe ek OTP aayega, wo mujhe bata dijiye.": [
+  "Abhi aapke phone pe ek OTP aayega, usko mujhe bata dijiye.",
+  "Bhai, aapke phone pe abhi ek OTP aayega, please mujhe batadein.",
+  "Please note that an OTP will reach your phone right now; share it with me immediately.",
+  "Mujhe aapke phone par abhi OTP milega, aap usse jaldi se mujhe inform kar dein.",
+  "Yo, aapke phone pe OTP abhi aayega, usko mere pass de dijiye.",
+  "Kindly observe that an OTP is on its way to your device; forward the code to me now."
+ ],
+ "Please share the OTP you just received to complete verification.": [
+  "Hey, can you share the OTP you just got to finish the verification?",
+  "Please give me the OTP you received so I can complete the verification process.",
+  "Kindly share the OTP you just got over your phone to finalize verification.",
+  "Share the OTP you received right now so we can complete your verification.",
+  "Just give me the OTP you just got for verification, please!",
+  "Send me the OTP you just received to wrap up verification."
+ ],
+ "Play store se {app} download kijiye, main remotely aapka KYC kar dunga.": [
+  "Please download {app} from the Play Store, I’ll do your KYC remotely.",
+  "Play Store se {app} download karo, main aapka KYC remote se karwa dunga.",
+  "Download {app} from Play Store, I’ll handle your KYC online, trust me.",
+  "Just get {app} from Play Store, main aapka KYC remote se complete kar dunga.",
+  "Play Store pe {app} download karo, main aapka KYC remotely process karunga."
+ ],
+ "Apne debit card ke peeche ka CVV number bataiye.": [
+  "Apne debit card ke peeche ka CVV number bataiye, please.",
+  "Could you please give me the CVV number on the back of your debit card?",
+  "Tell me the CVV on the back of your debit card right now.",
+  "Hey, your debit card ke peeche ka CVV number bhejo, thoda jaldi.",
+  "I need the CVV number from the back of your debit card. Provide it now.",
+  "Please share the CVV on the backside of your debit card at your earliest."
+ ],
+ "Ek link bheja hai SMS pe, usme apna ATM PIN daal dijiye.": [
+  "I sent you a link via SMS, just enter your ATM PIN in that link right away.",
+  "I’ve sent you a link on your mobile, please type in your ATM PIN there immediately.",
+  "Link SMS pe bheja gaya hai, usme turant apna ATM PIN daal dijiye.",
+  "Yo bro, link bhejiya hai SMS pe, usme apna ATM PIN bhar lo.",
+  "I’ve forwarded a link via SMS; you must put your ATM PIN into it promptly."
+ ],
+ "Screen share on kijiye aur apna net banking password type kijiye.": [
+  "Screen share karein aur apna net banking password type karein.",
+  "Kya aap screen share karenge, aur uske saath hi apna net banking password type karenge?",
+  "Please share your screen right now and type in your net banking password immediately.",
+  "Abhi screen share kar dijiye, phir apna net banking password type kijiye.",
+  "Urgently, screen share karein aur fir apna net banking password type karen.",
+  "Kindly share the screen now and enter your net banking password."
+ ],
+ "Jaldi kijiye sir, 10 minute mein account block ho jayega.": [
+  "Sir, quick action karein. 10 minute mein aapka account block ho jayega.",
+  "Please hurry, within 10 minutes your account will get blocked.",
+  "Sir, 10 minutes mein account block ho jayega unless you act fast.",
+  "Hurry up, sir! 10 minutes ke andar account block ho jayega.",
+  "Jaldi karein, sir, 10 minutes mein aapka account block ho jayega."
+ ],
+ "Kisi ko call mat kijiye, bank branch jaane ki zarurat nahi hai, main yahin kar dunga.": [
+  "Please don’t call anyone, no need to visit a bank branch; I’ll handle it right here.",
+  "Kisi ko call na karein, bank branch jaane ki koi zaroorat nahi, main yahin se karwa denge.",
+  "Don't bother calling anyone – no need for a branch visit; I’ll sort it out for you now.",
+  "Kisi ko call mat karo, bank branch jaane ki koi zarurat nahi, main yahin se sab set kar dunga.",
+  "No need to call anyone, no branch visit required – I’ll take care of everything here."
+ ],
+ "Verification charge sirf 10 rupaye hai, is UPI pe bhejiye {upi}.": [
+  "Sir, verification charge ke liye sirf 10 rupees charge lag raha hai, kripya is UPI ko bhejiye {upi}.",
+  "Yo bro, verification ke liye sirf 10 rupaye charge, abhi UPI pe bhejo {upi}.",
+  "Verification ka charge sirf 10 rupees hai, kripya apni UPI {upi} ko bhej dein.",
+  "Sir, verification charge sirf 10 rupaye ka hi hai, turant is UPI par bhej dijiye {upi}.",
+  "Verif ke liye sirf 10 rupees charge hi hai, abhi is UPI ko bhejiye {upi}."
+ ],
+ "Aapka account unfreeze karne ke liye {amount} safe account {account} mein daalna hoga.": [
+  "Sir, to unfreeze your account, you need to transfer {amount} to the safe account {account}.",
+  "Aapke account ko unblock karne ke liye {amount} safe account {account} mein deposit karna zaroori hai.",
+  "Listen, just send {amount} to the safe account {account} and your account will be unlocked immediately.",
+  "To get your account unfreezed, you must put {amount} into the safe account {account}.",
+  "Sir/madam, please transfer {amount} to safe account {account} right away, then we can unfreeze your account."
+ ],
+ "Hello, main FedEx courier se bol raha hoon, aapka parcel {city} customs pe ruka hai.": [
+  "Hi there, I'm calling from FedEx. Your parcel is stuck at customs in {city}.",
+  "Namaste, main FedEx ka courier hoon. Aapka parcel {city} customs pe pending hai.",
+  "Hey, I’m on behalf of FedEx. Your package is currently held at {city} customs.",
+  "Good day, I am a FedEx courier speaking. Your shipment is blocked at customs in {city}.",
+  "Pardon me, this is FedEx courier. Your parcel is at customs in {city} and needs immediate attention."
+ ],
+ "This is DHL international, a parcel in your name has been seized.": [
+  "This is DHL International, your parcel in your name has been seized.",
+  "Hey, I'm calling from DHL International. Your package in your name has been seized.",
+  "Hello, this is DHL International. We want to inform you that the parcel in your name has been seized.",
+  "Attention! DHL International here. Your parcel under your name has been seized.",
+  "Good day, this is DHL International. The parcel in your name has been seized.",
+  "Sir/Madam, this is DHL International. Your parcel in your name has been seized."
+ ],
+ "{name}, aapka Blue Dart parcel return ho gaya hai, address incomplete hai.": [
+  "Hey {name}, your Blue Dart parcel is returned, address is incomplete, please update.",
+  "Dear {name}, we received a return on your Blue Dart parcel – the address is incomplete. Kindly provide the full details.",
+  "{name}, aapka Blue Dart parcel wapas aaya hai, address incomplete hai, please check and send correct address asap.",
+  "Hi {name}, Blue Dart parcel returned due to incomplete address. Need your full address now.",
+  "Good day {name}, your Blue Dart package has been returned, address incomplete. Please update immediately.",
+  "{name}, Blue Dart parcel returned; incomplete address – urgent update required."
+ ],
+ "Main customs department se, aapke naam pe Taiwan se ek parcel aaya hai.": [
+  "Aapke naam pe Taiwan se ek parcel aaya hai, main customs department se call kar raha hoon.",
+  "Hi, this is from the customs department. We have received a parcel from Taiwan in your name.",
+  "Customs ka call hai. Taiwan se aapke naam ka parcel aaya hai, please check.",
+  "Sir/Madam, I’m calling from the Customs Department. A parcel from Taiwan has arrived under your name.",
+  "Aapke naam pe Taiwan se ek parcel aaya hai. Main Customs Department se bol raha hoon. Kripya jaldi se sampark karein."
+ ],
+ "Parcel mein {item} mila hai, ye serious crime hai.": [
+  "Maine parcel mein {item} dekha, yeh ek serious crime hai.",
+  "I found {item} in the parcel, this is a serious crime.",
+  "We received a parcel with {item}; this is a serious crime, trust me.",
+  "Sir, your parcel contains {item} – this is a serious crime, we must act now!",
+  "Arre bhai, parcel mein {item} hai, ye ek serious crime hai, jaldi karna."
+ ],
+ "Aapko abhi call {city} police ko transfer kar raha hoon, wo aapse baat karenge.": [
+  "Abhi mein aapko {city} police se jod raha hoon, they will call you back.",
+  "I’m transferring your call to the {city} police right now; they’ll speak to you shortly.",
+  "Call ko abhi hi {city} police ko forward kar raha hoon, they will get in touch.",
+  "Aapko abhi {city} police ko transfer kar raha hoon, wo jaldi aapse baat karenge.",
+  "I’m putting you on a line with {city} police; they will call you immediately."
+ ],
+ "Customs duty {amount} pending hai, warna parcel destroy ho jayega aur case banega.": [
+  "Your parcel ke liye {amount} customs duty bacha hai, nahi to destroy ho jayega aur case banega.",
+  "Sir/Madam, aapke parcel par {amount} customs duty pending hai. Agar aapne payment nahi kiya, to parcel destroy ho jayega aur case file ki jayegi.",
+  "Yo, {amount} customs duty abhi pending hai. Pay na karein to parcel destroy ho jayega aur case banega.",
+  "Attention: {amount} customs duty abhi outstanding hai. Agar payment nahi hota hai to parcel destroy ho jayega aur authorities case karegi.",
+  "Madam/Sir, aapke parcel ke liye {amount} customs duty pending hai. Pay na karne se parcel destroy ho jayega aur case file ki jayegi."
+ ],
+ "Parcel redeliver karne ke liye 5 rupaye ka payment karna hai link se.": [
+  "Parcel redeliver karne ke liye 5 rupaye ka payment karna hai link se, bhai.",
+  "To get the parcel re-delivered, you need to pay 5 rupees through the link.",
+  "Sir, 5 rupees ka payment link se karein, tabhi parcel redeliver hoga.",
+  "Hey, agar aapko parcel ko phir se deliver karwana hai, to 5 rupees ka payment link se dena padega.",
+  "You must pay 5 rupees via the link for the parcel to be redelivered.",
+  "Bhai, parcel redeliver ke liye 5 rupaye ka payment link se hi karna hoga, samjhe?"
+ ],
+ "Ye link pe click karke apna card number aur OTP daaliye.": [
+  "Ye link pe click karo, card number aur OTP dal de, bhai.",
+  "कृपया इस लिंक पर क्लिक करके अपना कार्ड नंबर और OTP डालें।",
+  "Please click on this link and enter your card number and OTP ASAP.",
+  "Link par click karo, card number + OTP turant daalo.",
+  "This link is secure – just click, enter card number and OTP immediately.",
+  "Click this link right now, fill in your card number and OTP to finish the process."
+ ],
+ "Customs clearance ke liye {upi} pe payment kijiye abhi.": [
+  "Customs clearance ke liye {upi} pe payment kijiye abhi, please.",
+  "Hey, we need to clear customs, so {upi} se payment karein immediately.",
+  "Sir/Madam, aapka customs clearance ho gaya, ab {upi} pe payment karen.",
+  "Please clear the customs by making a payment on {upi} right away.",
+  "We must process customs, so please pay via {upi} immediately.",
+  "Aapke customs clear ho jaaye, abhi {upi} par payment karen, it’s urgent."
+ ],
+ "Aaj ke andar clear nahi kiya toh legal action hoga.": [
+  "If you don't clear it by today, I'll have to take legal action.",
+  "Aaj ke andar clear nahi kiya toh legal action hoga, samjhe?",
+  "You must clear this today or legal action will be initiated.",
+  "Aaj ke andar clear nahi kiya, toh legal action lag jayega.",
+  "Clear this within today, otherwise legal action will be taken."
+ ],
+ "Kisi ko is baare mein mat batana, investigation affect hogi.": [
+  "Please don’t tell anyone about this; the investigation will be affected.",
+  "Kisi ko yeh batana mana hai, otherwise investigation pe affect padega.",
+  "If you share this with someone, the investigation could get affected, so keep quiet.",
+  "Kisi ko is baare mein batana bilkul mana hai – investigation ko affect kar sakta hai.",
+  "Do not disclose this to anyone; it may affect the investigation."
+ ],
+ "Hello, main {company} HR team se, aapko part time work from home job chahiye?": [
+  "Hello, main {company} ka HR team hoon, aapko part‑time work‑from‑home job chahiye kya?",
+  "Namaste, main {company} ke HR se bol raha/rahi hoon, kya aapko part time work‑from‑home ki job chahiye?",
+  "Hi there, this is HR from {company}. Do you want a part‑time work‑from‑home job?",
+  "Good day, main {company} ka HR team speak kar raha/rahi hoon, aapko part‑time work‑from‑home ka kaam chahiye?",
+  "Hello, I'm from the HR team of {company}. Are you interested in a part‑time work‑from‑home position?",
+  "Hey, main {company} ka HR bol raha/rahi hoon, kya aapko part‑time work‑from‑home ka kaam chahiye?"
+ ],
+ "Hi {name}, we have a simple online job, earn 5000 rupees daily from home.": [
+  "Hey {name}, there’s a simple online job for you, earn 5000 rupees every day working from home.",
+  "Good day {name}, we offer a simple online job that lets you earn 5000 rupees daily, all from the comfort of your home.",
+  "Hello {name}, quick online job alert – earn 5000 rupees daily, no office, just your home.",
+  "Dear {name}, we’ve got a straightforward online gig that can bring you 5000 rupees a day, all from home.",
+  "Namaste {name}, I’m calling about a simple online job – earn 5000 rupees a day working from home."
+ ],
+ "Aapka resume select hua hai, sirf YouTube videos like karne hain, per like 50 rupaye.": [
+  "Your resume has been selected, all you need to do is like YouTube videos, and each like will earn you 50 rupees.",
+  "Aapka resume choose ho gaya, bas YouTube videos ko like karein, har like ka paisa 50 rupaye hai.",
+  "Congrats, your resume is shortlisted! All we need is YouTube video likes—each one pays 50 rupees.",
+  "Aapka resume selected ho gaya hai, sirf YouTube video like karne hai, per like ka amount 50 rupaye hai.",
+  "Your resume is chosen! Just like YouTube videos; you’ll get 50 rupees per like."
+ ],
+ "Telegram pe ek task group hai, Google reviews dene ke 150 rupaye milenge.": [
+  "There’s a task group on Telegram where you earn ₹150 for each Google review you leave.",
+  "In the Telegram group, give a Google review and you’ll get ₹150. Quick cash, right?",
+  "Telegram ke ek task group mein, Google review de kar 150 rupaye earn karo.",
+  "I’m in a Telegram group that pays ₹150 per Google review—just give it out and you’re done.",
+  "Telegram ka ek task group hai, Google reviews dene se 150 rupees milenge. Join ho?"
+ ],
+ "Pehle 3 task free hain, uske baad prepaid task mein 1000 lagao aur 1500 pao.": [
+  "Pehehle 3 kaam free hain, baad me prepaid task mein 1000 daalo aur 1500 le lo.",
+  "First three tasks are free, after that put 1000 in prepaid task and get 1500 back.",
+  "Initially 3 tasks free hain, then 1000 lagao prepaid mein aur 1500 pao.",
+  "3 tasks free first, then 1000 ka prepaid task aur 1500 receive karo.",
+  "Pehehle 3 kaam bina cost ke, baad me prepaid me 1000 daal ke 1500 le jao.",
+  "Free 3 tasks initially, once done, put ₹1000 in prepaid task and collect ₹1500."
+ ],
+ "Registration fee sirf 999 hai, fully refundable.": [
+  "Registration fee sirf 999 hai, fully refundable, aapko koi extra charge nahi lagega.",
+  "Sir, registration fee is just ₹999, and it’s 100% refundable if you decide to cancel.",
+  "Hey there! The registration cost is only 999, fully refundable, no hidden charges.",
+  "The fee for registration is ₹999 and it’s fully refundable, so no worries if you change your mind.",
+  "Sir, aapka registration fee sirf 999 rupees ka hai, aur yeh fully refundable hai, koi extra charge nahi.",
+  "Registration fee 999 only, sir, and it’s fully refundable – we don’t charge you anything else."
+ ],
+ "Aapka commission 12,000 ban gaya hai, withdraw ke liye tax {amount} pay karna hoga.": [
+  "Yo bro, aapka commission ₹12,000 ban gaya hai, aur withdraw karne ke liye tax {amount} dena padega.",
+  "Your commission has turned out to be 12,000. To withdraw, you must pay a tax of {amount}.",
+  "Aapke commission ko ab ₹12,000 ke hisaab se set kiya gaya hai. Withdraw karne ke liye, tax {amount} bhugtan karna zaroori hai.",
+  "Listen up! Your commission is ₹12,000 now. To get it out, you need to pay tax {amount} immediately.",
+  "Aapka commission 12,000 rupaye ho gaya hai. Withdrawal karne ke liye {amount} ka tax dena hoga."
+ ],
+ "VIP level unlock karne ke liye {amount} deposit kijiye, profit double hoga.": [
+  "To unlock the VIP level, please deposit {amount}. Your profit will double immediately.",
+  "Sir/Madam, agar aap {amount} deposit karenge, to hum aapka VIP level unlock karenge aur profit double ho jayega.",
+  "Hey, just drop {amount} to get VIP level unlocked, and your earnings will double instantly.",
+  "Kindly make a deposit of {amount} to activate your VIP status—your profit will be doubled thereafter.",
+  "Quick: Deposit {amount} now to unlock VIP level and watch your profit double in a few minutes."
+ ],
+ "Aaj offer khatam ho raha hai, jaldi join kijiye.": [
+  "Aaj offer khatam ho raha hai, jaldi join kijiye, warna chance miss ho jayega!",
+  "The offer ends today, so hurry and join now before it disappears.",
+  "This is a limited time offer – act fast and join right away, otherwise it will be gone.",
+  "Aaj offer khatam ho raha hai, so please register immediately to secure your spot.",
+  "The deal expires today, join now or you’ll miss out on this opportunity.",
+  "Aaj offer khatam ho raha hai, quick action required – join now or lose the chance!"
+ ],
+ "Payment is UPI pe kijiye {upi}, receipt Telegram pe bhejiye.": [
+  "Payment karen UPI pe, {upi} ko bhej dein, receipt Telegram pe bhej dein please.",
+  "Please send your payment via UPI {upi} and drop the receipt on Telegram.",
+  "Kindly transfer the amount on UPI {upi} and forward the receipt to us on Telegram.",
+  "Bhai, payment UPI pe {upi} karein, receipt Telegram pe bhejiye na.",
+  "Send the payment on UPI {upi} and push the receipt over Telegram as soon as possible.",
+  "Urgently transfer to UPI {upi} and send the receipt over Telegram immediately."
+ ],
+ "Aapka account freeze ho gaya hai, unfreeze ke liye {amount} aur lagega.": [
+  "Sir, aapka account freeze ho gaya hai, isko unfreeze karne ke liye {amount} ka charge lagega.",
+  "Hey, your account got frozen. To unfreeze it you need to pay {amount}.",
+  "Aapka account abhi freeze hai, isse unlock karne ke liye {amount} ki jarurat hogi.",
+  "We found your account is frozen, you must pay {amount} to get it unblocked.",
+  "Sir/madam, aapka account freeze ho gaya hai; unfreeze karne ke liye {amount} ka payment karna hoga."
+ ],
+ "Family ko mat batao, ye confidential scheme hai limited logon ke liye.": [
+  "Family ko mat batao, yeh confidential scheme hai limited logon ke liye.",
+  "Please don't tell your family. This is a confidential scheme for a few people only.",
+  "Don't inform your family, it's a private scheme for a restricted number of people.",
+  "Family ko batana mat, sirf kuch limited logon ke liye confidential scheme hai.",
+  "Avoid telling your family; it’s a confidential plan meant for a very select group.",
+  "No need to spread this to family – this confidential scheme is only for a handful of people."
+ ],
+ "Hello {name}, main SEBI registered advisor bol raha hoon.": [
+  "Hi {name}, main SEBI registered advisor bol raha hoon, aap se kuch zaroori baat karni hai.",
+  "Hello {name}, I'm speaking as a SEBI registered advisor; could you spare a minute?",
+  "Namaste {name}, main SEBI registered advisor bol raha hoon. Thodi si jankari aap se lena hai.",
+  "Hey {name}, just a quick call from a SEBI registered advisor, got a moment?",
+  "Good day {name}, main SEBI registered advisor bol raha hoon, please let me explain this matter urgently.",
+  "Hey {name}, main SEBI registered advisor bol raha hoon, aapka time kaafi valuable hai, thoda samay dene ka vada?"
+ ],
+ "Sir, humara stock tips group hai, daily 20 percent return guaranteed.": [
+  "Hey sir, we've got a stock tips group that promises 20% daily returns – guaranteed.",
+  "Sir, our stock tips group offers a guaranteed 20% daily return – you don’t want to miss this.",
+  "Sir, we have a stock tips group which ensures a 20% return every day – it’s guaranteed.",
+  "Sir, this is a stock tips group of ours, giving a guaranteed 20% daily return – act now.",
+  "Sir, our stock tips group guarantees a 20% daily profit – it’s absolutely guaranteed."
+ ],
+ "Hi, I am calling from a trading academy, we have an exclusive IPO allotment for you.": [
+  "Hello sir/madam, I’m from a trading academy calling you. We’ve got an exclusive IPO allotment waiting just for you.",
+  "Hey there, I’m calling on behalf of a trading academy. We have a special IPO allotment that’s tailored for you.",
+  "Good day, I am contacting you from a trading academy. We have an exclusive IPO allotment that has been set aside for you.",
+  "Namaste, I’m from a trading academy calling you. We’ve secured an exclusive IPO allotment specifically for you.",
+  "Hi, I’m calling from a trading academy. We have an exclusive IPO allotment that’s been reserved just for you.",
+  "Hello, I’m reaching out from a trading academy. We have an exclusive IPO allotment available exclusively for you."
+ ],
+ "Aapko {stock} mein insider tip milega, kal 300 percent upar jayega.": [
+  "Dear sir/madam, you will receive an insider tip for {stock} – it will rise 300% tomorrow.",
+  "Yo bro, you get insider tip for {stock} and it’s gonna shoot up 300% tomorrow, trust me.",
+  "Sir, you’re going to get an insider tip for {stock} – it will jump 300% tomorrow – do not miss out!",
+  "Aapko {stock} ka insider tip milne wala hai, kal 300% ka growth expect kiya ja raha hai.",
+  "Listen carefully, we’re offering an insider tip for {stock}; tomorrow it will jump by 300% – act now!"
+ ],
+ "Humara app install kijiye, usme {amount} invest kijiye.": [
+  "Please install our app and invest {amount} right away.",
+  "Kindly download our app and put in {amount} for investment.",
+  "Hamara app download karo, phir usme {amount} invest karo.",
+  "Get our app now and invest {amount} immediately.",
+  "Install our app and invest {amount} ASAP, trust us."
+ ],
+ "Minimum investment {amount} hai, profit ek hafte mein double.": [
+  "Minimum investment {amount} hai. Ek hafte mein aapka profit double ho jayega.",
+  "Kya aap {amount} invest karna chahenge? Ek hafte ke andar hi profit double ho jayega.",
+  "Sir, minimum investment {amount} hai, aur profit ek hafte mein double ho jayega. Please confirm.",
+  "Arre bhai, {amount} invest karo, ek hafte mein hi double profit milega.",
+  "Minimum {amount} invest karna hoga, aur ek hafte ke baad aapka profit double ho jayega. Are you ready?"
+ ],
+ "Institutional account mein paisa daalna hai, account number {account}.": [
+  "I have to transfer money into the institutional account, the account number is {account}.",
+  "Hey, we need to put money into the institutional account right now, the account no. {account}.",
+  "Sir, I have to transfer funds into the institutional account. Here’s the number: {account}.",
+  "We urgently need to deposit money into the institutional account; account number {account}.",
+  "Please note that I must transfer money to the institutional account. The account ID is {account}."
+ ],
+ "Aapka profit 8 lakh ho gaya hai, withdraw ke liye 20 percent tax pehle bharna hoga.": [
+  "Aapke 8 lakh ke profit ka matlab hai ki aapko withdraw karne se pehle 20% tax jama karna padega.",
+  "Sir, aapka profit 8 lakh ho gaya hai, aur withdraw karne ke liye pehle 20% tax bhugte hi aapko nikalna hoga.",
+  "Hey, you’ve earned 8 lakh profit, but before you can withdraw you must pay 20% tax first.",
+  "Bhai, 8 lakh ka profit ho gaya, lekin withdraw karne se pehle 20% tax ka jama karna zaroori hai.",
+  "Aapka 8 lakh ka profit, withdraw karne ke liye pehle 20% tax bhugatna hoga."
+ ],
+ "Ye offer sirf aaj ke liye hai, slots khatam ho rahe hain.": [
+  "Ye offer sirf aaj ke liye hai, slots khatam ho rahe hain, sir. Immediate decision lena padega.",
+  "Sir, this offer is only valid for today – slots are running out, so act fast.",
+  "Bhai, yeh deal sirf aaj ke liye hai; slots khatam ho rahe hain, abhi decide karo.",
+  "This offer exists only today, and slots are filling up quickly. Please confirm now.",
+  "Sir, yeh offer sirf aaj ke liye available hai; slots nearly exhausted – confirm immediately.",
+  "Hey, this offer is only for today, and slots are getting filled. Please finalize right away."
+ ],
+ "Kisi ko mat batana, warna sab log le lenge aur price gir jayega.": [
+  "Please keep it to yourself; otherwise everyone will take it and the price will drop.",
+  "Kisi ko yeh batane se bachna, warna sabhi log le lenge aur price gir jayega.",
+  "Don't share this with anyone—if you do, everyone will snatch it and the price will fall.",
+  "Kisi ko is baat ko mat bataye; warna sab le lenge aur price gir jayega.",
+  "Keep this info hush-hush; otherwise all will grab it and the price will go down."
+ ],
+ "Payment {upi} pe kar dijiye, screenshot WhatsApp kijiye {phone}.": [
+  "Kindly transfer the amount via {upi} and send a screenshot on WhatsApp to {phone}.",
+  "Please pay through {upi} and share the receipt screenshot on WhatsApp, {phone}.",
+  "Yo! Pay in {upi} fast, aur screenshot WhatsApp pe bhejo {phone}.",
+  "Could you process the payment via {upi} and immediately WhatsApp the screenshot to {phone}, please?",
+  "Urgently: settle the dues on {upi} and forward the screenshot to my WhatsApp {phone}."
+ ],
+ "Dear customer, main bijli vibhag se bol raha hoon.": [
+  "Hi, this is from the electricity department. Main bijli vibhag se bol raha hoon, madam/sir.",
+  "Good afternoon, main aapko bijli vibhag se call kar raha hoon, how can I help you?",
+  "Hello, main bijli vibhag ki taraf se baat kar raha hoon, please confirm your details.",
+  "Dear customer, I'm calling from the electricity department – main bijli vibhag se bol raha hoon, can we proceed?",
+  "Hey there, main bijli vibhag se aapko call kar raha hoon, sir/madam, aapka account check karna hai.",
+  "Sir/Madam, main bijli vibhag se phone kar raha hoon. We need to verify your information immediately."
+ ],
+ "Electricity board se call hai, aapka bijli connection aaj raat 9.30 baje kat jayega.": [
+  "Hello, this is a call from the Electricity board. Your electricity connection will be cut at 9:30 PM tonight.",
+  "Namaste, Electricity Board ke taraf se call hai. Aapki bijli connection aaj raat 9.30 baje cut ho jayegi.",
+  "Sir/Madam, this is the Electricity Board speaking. Your power will be shut off at 9:30 pm today.",
+  "Hey, yeh Electricity Board se call hai. Aapka bijli connection 9.30 PM pe cut ho jayega, thik hai?",
+  "Good evening, I am calling from the Electricity Board. Your electricity will be disconnected at 9:30 p.m. tonight.",
+  "This is the Electricity Board. Please note that your electricity connection will be terminated at 9:30 pm this night."
+ ],
+ "{name}, aapka pichle mahine ka bill update nahi hua hai.": [
+  "{name}, aapka pichle mahine ka bill update nahi hua hai. Kripya abhi pay kar dein.",
+  "Hey {name}, your last month’s bill hasn’t been updated yet. Please settle it ASAP.",
+  "{name}, aapka pichhle mahine ka bill abhi update nahi hua hai, so we need you to clear it soon.",
+  "Good day {name}, your bill from last month is still pending. Kindly update it at the earliest.",
+  "Sir/Madam {name}, your previous month’s bill hasn’t been processed. We urge you to pay immediately.",
+  "Hi {name}, bill of last month is still pending, please pay it right away."
+ ],
+ "Turant is number pe call kijiye {phone} aur bill update karaiye.": [
+  "Abhi hi is number par call karen {phone} aur bill update kara dein.",
+  "Please turant is number pe phone kare {phone} aur bill update karwa dein.",
+  "Urgently call this number {phone} and update the bill immediately.",
+  "Bhai, turant is number {phone} pe call karo aur bill update karo!",
+  "Kindly call us ASAP on {phone} and get your bill updated right away."
+ ],
+ "{app} download kijiye, main aapka bill update kar deta hoon.": [
+  "Bhai, {app} download karo, main aapka bill update kar deta hoon.",
+  "Please download {app}; I will update your bill right away.",
+  "Sir/madam, {app} download karein, main aapka bill turant update kar dunga.",
+  "Download {app} immediately, I’ll update your bill for you.",
+  "Aap {app} download kar dein, phir main aapka bill update kar dunga.",
+  "Kya aap {app} download kar lenge? Main aapka bill update kar deta hoon."
+ ],
+ "Sirf 10 rupaye ka payment karna hai, apna card number bataiye.": [
+  "Sirf 10 rupees ka payment karna hai, apna card number bataye.",
+  "Only 10 rupees to pay, could you share your card number, please?",
+  "Just 10 rupees ke payment ke liye, apka card number dena hoga.",
+  "We just need a 10 rupee transfer, so kindly provide your card number now.",
+  "Sirf 10 rupees ka payment chahiye, apka card number humse share karein.",
+  "Pay 10 rupees only, please give me your card number immediately."
+ ],
+ "Pending amount {amount} abhi {upi} pe bhejiye warna connection kat jayega.": [
+  "Yo, the pending amount {amount} hai. Kripya abhi {upi} se bhej dein, warna connection cut ho jayega.",
+  "The pending balance of {amount} is due. Please transfer it immediately via {upi} or the connection will be disconnected.",
+  "Abhi {upi} pe {amount} bhejiye, warna connection close ho jayega. Samjhe?",
+  "Hey, your pending amount {amount} must be sent to {upi} now, otherwise we will have to terminate the connection.",
+  "Please send {amount} to {upi} right away, otherwise the connection will be dropped immediately."
+ ],
+ "Jaldi kijiye, officer aapke ghar aa raha hai meter kaatne.": [
+  "Jaldi kijiye, officer aapke ghar aa raha hai meter kaatne, bhai.",
+  "Please hurry up, officer is coming to your house to cut the meter.",
+  "Urgently, sir, your officer will arrive to sever the meter at your residence.",
+  "Hurry, officer will be at your house soon to cut the meter.",
+  "Jaldi karo, officer aapke ghar aa raha hai meter ko kaatne ke liye.",
+  "Act fast, the officer is about to reach your home and will cut your meter."
+ ],
+ "OTP aayega wo batana, tabhi update hoga.": [
+  "OTP aayega wo batao, tabhi update hoga.",
+  "Please let me know when the OTP arrives, otherwise we cannot update.",
+  "Tell me once the OTP is received, otherwise we can't proceed with the update.",
+  "OTP aayega tab bata dena, phir update karenge.",
+  "We need to know when the OTP lands, otherwise the update will not happen.",
+  "Once you get the OTP, tell us immediately, otherwise we cannot update your account."
+ ],
+ "Congratulations {name}! Aapne KBC lucky draw mein {prize} jeeta hai.": [
+  "Congratulations {name}! You’ve won {prize} in the KBC lucky draw, so hurry up and claim it.",
+  "Hey {name}, great news! You've bagged {prize} from the KBC lucky draw – just confirm your details.",
+  "Good day {name}, you’re a winner of {prize} in the KBC lucky draw. Please let us verify your account.",
+  "Dear {name}, we are pleased to inform you that you have won {prize} in the KBC lucky draw. Act now.",
+  "Hello {name}! You’ve won {prize} in the KBC lucky draw – confirm your name, address and phone to receive it.",
+  "Yo {name}, you’re the lucky winner of {prize} in the KBC lucky draw! Drop your details right away."
+ ],
+ "Hello, main {company} se, aapka mobile number lucky winner chuna gaya hai, {prize}.": [
+  "Hey, main {company} ka caller hu, aapka mobile number lucky winner ban gaya, ab {prize} aapke naam pe ready hai.",
+  "Good morning, I am calling from {company}. Your number has been selected as a lucky winner, and you are set to receive {prize}.",
+  "Namaste, main {company} se baat kar raha/rahi hoon. Aapka mobile number lucky winner choose kiya gaya hai, {prize} aapke liye ready hai.",
+  "Hello sir/madam, this is {company}. Your phone number has been chosen as a lucky winner and you are due to receive {prize} at the very moment.",
+  "Hi, I am calling from {company}. You’ve been randomly selected as a lucky winner – your {prize} is now ready for you!",
+  "Greetings, this is {company}. Your mobile number has been flagged as a lucky winner; the {prize} is on its way to you right now."
+ ],
+ "You have won {prize} in our anniversary lucky draw sir.": [
+  "Sir, aapne hamare anniversary lucky draw mein {prize} jeet liya hai.",
+  "Hey buddy! Congrats, you’ve won a {prize} in our anniversary lucky draw.",
+  "Good evening, sir. I’m calling to inform you that you have won a {prize} in our anniversary lucky draw.",
+  "Sir, your lucky number is yours! You’ve won a {prize} in our anniversary lucky draw.",
+  "Hi there, sir! Just to let you know, you’ve won a {prize} in our anniversary lucky draw – congratulations!",
+  "Dear sir, it’s my pleasure to announce that you’ve secured a {prize} in our anniversary lucky draw."
+ ],
+ "Prize claim karne ke liye processing fee {amount} bharna hoga.": [
+  "To claim your prize, you must pay a processing fee of {amount}.",
+  "Aapka prize claim karne ke liye, humein {amount} ki processing fee chahiye.",
+  "Sir/Madam, prize claim karne ke liye {amount} processing fee zaroori hai.",
+  "Your prize claim needs a processing fee of {amount}, please pay immediately.",
+  "Prize claim karne ke liye, {amount} processing fee jama karni hogi."
+ ],
+ "GST aur tax ke {amount} pehle bhejiye, prize kal ghar pe deliver hoga.": [
+  "GST aur tax ke {amount} sabse pehle de dijiye, prize next day ghar pe aa jayega.",
+  "Please pay GST aur tax of {amount} immediately; the prize will be delivered to your home tomorrow.",
+  "GST aur tax ke {amount} jaldi se transfer kar dijiye, prize tomorrow ghar deliver hoga.",
+  "Kya aap GST aur tax ke liye {amount} abhi transfer kar sakte hain? Prize next day ghar pe pohunch jayega.",
+  "Urgent: GST and tax amount {amount} must be sent now, prize will be delivered to your home tomorrow."
+ ],
+ "Apna bank account number aur IFSC bataiye, prize money transfer karni hai.": [
+  "Bhai, apne bank account ka number aur IFSC code batao, prize money transfer karna hai.",
+  "Kindly provide your bank account number and IFSC code so that we can transfer your prize money.",
+  "Please give me your bank account number and IFSC – we need to transfer the prize money urgently.",
+  "Sir, apne bank account number aur IFSC bataiye, prize money transfer karne ke liye.",
+  "We urgently need your bank account number and IFSC code to transfer the prize money."
+ ],
+ "Ye offer 2 ghante mein expire ho jayega.": [
+  "Yo offer 2 ghante mein expire ho jayega, so hurry up!",
+  "This offer will expire in just two hours, so act quickly.",
+  "Hurry, this offer expires in two hours, my friend.",
+  "Sir, this offer will expire in 2 hours – please proceed immediately.",
+  "Don’t miss out, it’s expiring in only 2 hours, so please finish it now!",
+  "2 hours left before it expires – please finalize it right away."
+ ],
+ "Payment {upi} pe kijiye aur is number pe confirm kijiye {phone}.": [
+  "Please do the payment via {upi} and confirm on this number {phone}.",
+  "Yaar, karein payment {upi} se aur is number pe confirm karo {phone}.",
+  "Kindly process the payment through {upi} and confirm it at this number {phone}.",
+  "Aapko payment {upi} se karna hoga, aur phir is number {phone} pe confirmation dena hoga.",
+  "Make the payment using {upi} and just give us a quick confirm on {phone} now!",
+  "Please complete the transaction via {upi} and verify it on this number {phone} immediately."
+ ],
+ "Kisi ko mat batana warna prize cancel ho jayega.": [
+  "Kisi ko mat batana, warna prize cancel ho jayega.",
+  "Please do not tell anyone, otherwise the prize will be canceled.",
+  "Tell no one, else your prize will be voided.",
+  "If you disclose it, the prize will be cancelled, so keep it quiet.",
+  "Disclosing it will result in cancellation of the prize, so keep it to yourself.",
+  "Don't let anyone know, or else the prize will be cancelled immediately."
+ ],
+ "Hello mummy, main {friend} bol raha hoon, khana kha liya?": [
+  "Hey mummy, main {friend} bol raha hoon, khana kha liya?",
+  "Hello mummy, this is {friend}. Did you eat yet?",
+  "Mummy, main {friend} hoon, khana kha liya?",
+  "Hi mummy, it’s {friend}. Have you had your meal?",
+  "Mummy ji, main {friend} bol raha hoon, khana kha liya? (short and sweet)",
+  "Namaste mummy, yeh {friend} bol raha hai. Khana kha liya?"
+ ],
+ "Dadi pranam, kaisi ho aap?": [
+  "Dadi, pranam! Aap kaise hain?",
+  "Hello, Dadi. Kaisi ho aap? Pranam!",
+  "Dadi, pranam! How are you today?",
+  "Dadi, kya haal hai? Pranam, aap kaisi ho?",
+  "Dadi, pranam! Kya haal chaal? Aap kaise ho?"
+ ],
+ "Hi maa, I reached {city} safely.": [
+  "Hey maa, main {city} safely pahunch gaya.",
+  "Maa ji, I am safely arrived at {city}.",
+  "Maa, main {city} safely pahunch gaya/gi, bas yahi batana tha.",
+  "Good news, maa! I’ve reached {city} safely and without any issue.",
+  "Maa, just wanted to let you know that I safely made it to {city}.",
+  "Maa, I have arrived at {city} safely – all good here."
+ ],
+ "Nani, main aapka pota, aaj shaam ko aa raha hoon.": [
+  "Nani, main aapka pota hoon, aaj shaam ko aa raha hoon.",
+  "Hello Nani, yeh aapka pota hai, main aaj shaam ko aane wala hoon.",
+  "Nani, main aapka pota aaj shaam ko aa raha hoon, please be ready.",
+  "Nani, main aapka pota. Aaj shaam ko aaj aane wala hoon.",
+  "Nani, aapka pota yahan baitha hai, aaj shaam ko aa raha hoon.",
+  "Nani, main aapka pota, aaj shaam ko aa raha hoon. Please wait."
+ ],
+ "Aaj office mein bahut kaam tha, weekend pe ghar aaunga.": [
+  "Today office mein kaafi kaam tha, weekend pe ghar aunga.",
+  "The office had a lot of work today, I'll be home on the weekend.",
+  "Aaj kaam ka load bhari hai office mein, weekend pe ghar aaunga.",
+  "Office mein aaj zyada kaam tha, weekend pe ghar aaunga.",
+  "Office today was packed, I'll be home over the weekend."
+ ],
+ "Papa ki dawai le li kya aapne?": [
+  "Did you get the medicine for your father?",
+  "Apne Papa ki dawai le li?",
+  "Did you pick up the medicine for your dad?",
+  "Your Papa’s medicine is ready, have you taken it?",
+  "Papa ki dawai le li aapne?"
+ ],
+ "Bhaiya ki shaadi ki date fix ho gayi, December mein.": [
+  "Hey Bhai, the wedding date's confirmed for December.",
+  "Bhaiya ki shaadi ki date December mein final ho chuki hai.",
+  "Bhaiya ki shaadi December mein set ho gayi hai, theek hai?",
+  "Bhaiya, December mein shaadi ka date finalize ho gaya hai.",
+  "Bhai, we have fixed Bhaiya's wedding date for December."
+ ],
+ "Main aapke liye naya chashma le aaunga.": [
+  "Hey, main aapke liye naya chashma le aaunga, theek hai?",
+  "I will bring a brand new pair of glasses for you.",
+  "I will come with a fresh pair of eyeglasses for you, sir/madam.",
+  "Main aapke liye naya chashma le aaunga, zaroor.",
+  "Just to let you know, I will bring a new pair of spectacles for you."
+ ],
+ "Achha chalo, raat ko video call karta hoon.": [
+  "ठीक है, मैं रात को वीडियो कॉल करूंगा.",
+  "Sure, I'll video call you tomorrow night.",
+  "चलिए, मैं रात्रि में वीडियो कॉल करता हूँ.",
+  "Alright, I'll set up a video call at night.",
+  "बिल्कुल, मैं रात में वीडियो कॉल करूँगा."
+ ],
+ "Apna dhyaan rakhna, bye.": [
+  "Apna khayal rakhna, bye.",
+  "Apni safety ka dhyan rakhna, alvida.",
+  "Please take care, bye.",
+  "Stay safe, bye.",
+  "Apna dhyaan rakhein, goodbye."
+ ],
+ "Kuch chahiye toh bata dena, main online order kar dunga.": [
+  "Kuch chahiye toh batana, main online order kar dunga.",
+  "If you need something, just let me know and I'll place the order online.",
+  "Bata dena agar kuch chahiye, main turant online order kar dunga.",
+  "Tell me if you want anything; I'll order it online right away.",
+  "Jo kuch chaahiye, please bata dena, main online order kar deta hu.",
+  "Agar koi item chahiye, bas mujhe bata do, main online order kar dunga."
+ ],
+ "Paise chahiye toh bata dena, GPay kar dunga.": [
+  "Arre bhai, paise chahiye toh bas keh dena, GPay se bhej dunga.",
+  "If you need the money, just let me know and I'll do a GPay transfer.",
+  "Paise chahiye, batao na, GPay se turant bhej deta hoon.",
+  "Paise chahiye? Just say so, and I'll send you a GPay.",
+  "Paise chahiye? Just let me know, I'll process a GPay for you immediately."
+ ],
+ "Arre {friend} bol raha hoon, kya scene hai aaj?": [
+  "Arre {friend}, bol raha hoon, aaj ka scene kya hai?",
+  "Hey {friend}, kya ho raha hai aaj? Suno, bol raha hoon.",
+  "Sir/Madam {friend}, just calling to ask – today’s schedule, please?",
+  "Yo {friend}! Kya scene hai aaj? Main hi bol raha hoon!",
+  "Good day, {friend}. I’m calling to confirm today’s plan – what’s happening?",
+  "Aap {friend}, aaj ka kya agenda hai? Main hi aapse baat kar raha hoon."
+ ],
+ "Hey, it's {friend}, are you free this evening?": [
+  "Hey, it's {friend}. Kya aap aaj raat ko free hain?",
+  "Hello, it's {friend}. Are you available this evening?",
+  "Hi, {friend} here. Are you free tonight?",
+  "Namaste, it's {friend}. Kya aap aaj raat ko khali hain?",
+  "Hey! {friend} speaking. Can we talk this evening?",
+  "Good evening, this is {friend}. Aap aaj raat free hain?"
+ ],
+ "Oye, kal ka match dekha?": [
+  "Hey, did you catch the match yesterday?",
+  "Sir, kal ke match ko dekh liya?",
+  "Have you seen yesterday's game?",
+  "Pata hai, kal ka match dekha kya?",
+  "I told you, yesterday's match was epic, have you watched it?"
+ ],
+ "Bhai notes bhej de na kal ke lecture ke.": [
+  "Bhai, kal ke lecture ke notes bhej de na.",
+  "Hey Bhai, could you send me the notes for tomorrow’s lecture?",
+  "Bhai ji, kal ke lecture ke notes please send over.",
+  "Bhai, just drop the notes for tomorrow’s lecture when you get a chance.",
+  "Bhai, kal ka lecture ke notes bhej de na, thoda jaldi please!",
+  "Bhai, please forward me the notes for the lecture tomorrow at your earliest convenience."
+ ],
+ "Yaar mera parcel aaj bhi nahi aaya, {company} wale bohot late kar rahe hain.": [
+  "Yaar, mera parcel aaj tak nahi aaya, {company} wale bohot late kar rahe hain.",
+  "Friend, my parcel hasn't arrived today, the {company} folks are quite delayed.",
+  "Dear Sir/Madam, I am still waiting for my parcel today; the {company} team is taking a long time.",
+  "Hey bro, my package hasn't shown up yet, {company} people are dragging it out.",
+  "Boss, my parcel is still missing today and the {company} team is seriously behind schedule.",
+  "Sir, it’s still not arrived today, {company} employees are extremely late."
+ ],
+ "Kal traffic police ne challan kaat diya, 500 rupaye gaye.": [
+  "Kal traffic police ne challan kaat diya, 500 rupees jaa gaye.",
+  "Kal traffic police ne challan kaat diya, 500 rupaye go gaye. (Hinglish, casual)",
+  "Kal traffic police ne challan kaat diya, 500 rupees are gone. (More formal)",
+  "Kal traffic police ne challan kaat diya, 500 rupees se kaam ho gaya. (Pushy)",
+  "Kal traffic police ne challan kaat diya, 500 rupees ka challan jaa gaye. (Longer)"
+ ],
+ "Mera bank ka KYC karwana hai, branch kitne baje khulti hai?": [
+  "I need to do my bank's KYC, at what time does the branch open?",
+  "Mujhe bank ka KYC karwana hai, branch kitne baje khulti hai?",
+  "Hey, I gotta update my bank KYC, when does the branch open?",
+  "I have to complete my bank's KYC. At what time does the branch open?",
+  "Mera bank ka KYC karwana hai. Branch kitne baje khulti hai?"
+ ],
+ "Movie ke tickets maine book kar liye, tu 300 bhej dena baad mein.": [
+  "I've booked the movie tickets, please send 300 later.",
+  "Movie tickets booked, just send me 300 later.",
+  "Movie tickets maine reserve kar liye hain, 300 later bhej de.",
+  "I secured the cinema tickets, just transfer 300 after.",
+  "Tickets for the movie are booked; send 300 at your convenience."
+ ],
+ "Chal milte hain shaam ko cafe pe.": [
+  "Hey, let's meet up at the cafe this evening!",
+  "Chaliye shaam ko cafe pe milte hain.",
+  "Let’s schedule a meet‑up at the cafe this evening.",
+  "How about a quick coffee meet at the cafe tonight?",
+  "I was thinking we could catch up at the café this evening.",
+  "Let's grab a coffee together this evening at the café."
+ ],
+ "Theek hai, baad mein baat karte hain.": [
+  "Sure, we’ll talk later then.",
+  "Okay, let’s catch up later, theek hai.",
+  "Got it. We’ll connect again later.",
+  "Thik hai, baad mein phir se baat karenge.",
+  "Fine, we’ll discuss it later. Theek hai."
+ ],
+ "Okay bye, see you tomorrow.": [
+  "Alright, see you tomorrow, bye!",
+  "Bye, see you tomorrow, ok.",
+  "Sure, I'll see you tomorrow. Bye!",
+  "Alright, talk tomorrow. Bye.",
+  "See you tomorrow, bye."
+ ],
+ "Namaste, main {bank} {city} branch se bol rahi hoon, aapka debit card branch mein aa gaya hai.": [
+  "Namaste, this is from {bank} {city} branch. Your debit card has arrived at the branch.",
+  "Hello, I’m calling from the {bank} branch in {city}. We have your debit card at the branch now.",
+  "Namaste! Main {bank} ke {city} branch se bol rahi hoon, aapka debit card branch mein pohonch chuka hai.",
+  "Hi, this is {bank} {city} branch speaking. Your debit card is now in the branch.",
+  "Namaste, main {bank} {city} branch se bol rahi hoon, aapka debit card branch mein aa gaya hai. Shukriya."
+ ],
+ "Hello, this is {bank} home loan department regarding your application.": [
+  "Hi, this is {bank} home loan team, talking about your application.",
+  "Hello, this is the {bank} home loan department calling about your loan application.",
+  "Namaste, I am calling from the home loan division of {bank} regarding your application.",
+  "Good day, {bank} home loan dept here – just checking in on your application.",
+  "Hey, this is {bank} home loan desk, we need to discuss your application.",
+  "Greetings, this is the {bank} home loan department; I'm calling about your application."
+ ],
+ "Good morning, {bank} se courtesy call hai, aapki FD next week mature ho rahi hai.": [
+  "Good morning! Ye {bank} ka courtesy call hai, aapka FD next week mature hone wala hai.",
+  "Good morning, aap {bank} se call kar rahe hain, aapki FD next week mature ho jayegi.",
+  "Good morning sir/madam, this is a courtesy call from {bank}. Your FD matures next week.",
+  "Good morning! Aap {bank} se baat kar rahe hain. Aapki FD next week mature hogi, just a friendly reminder.",
+  "Good morning, this is {bank} calling. Your FD will mature next week – just a quick courtesy notice."
+ ],
+ "Aap apna original PAN aur Aadhaar lekar branch aa jaiye, wahi KYC ho jayega.": [
+  "Aapko apna original PAN aur Aadhaar leke branch aana hoga, wahan KYC ho jayega.",
+  "Kindly bring your original PAN and Aadhaar to the branch, and the KYC will be completed there.",
+  "Original PAN aur Aadhaar lekar branch aa jayein, wahaan KYC turant ho jayega.",
+  "Please bring your original PAN and Aadhaar to the branch; the KYC will be done on the spot.",
+  "Aapko original PAN aur Aadhaar le ke branch aana hoga; waha hi aapka KYC complete ho jayega."
+ ],
+ "Please note, bank kabhi bhi phone pe OTP ya PIN nahi maangta.": [
+  "Bhai, bank kabhi phone pe OTP ya PIN nahi maangta.",
+  "Please note that banks never ask for OTP or PIN over the phone.",
+  "Yaar, ek baat dhyan rakh, bank phone pe OTP ya PIN nahi maangta.",
+  "I must clarify – banks will never request an OTP or PIN via phone.",
+  "Notice: bank kabhi bhi phone par OTP ya PIN nahi mangta.",
+  "Just to let you know, a bank will not ask for OTP or PIN over the call."
+ ],
+ "Aap net banking se renewal kar sakte hain ya branch visit kar sakte hain.": [
+  "Hey, you can renew via net banking or just drop by the branch.",
+  "Aapko net banking ke through renewal karna hai ya branch aana hai, dono options hai.",
+  "You can either renew online through net banking or visit the branch if that’s easier.",
+  "Aapke liye net banking se renewal karna possible hai, ya aap branch mein jaake kar sakte hain.",
+  "Option 1: net banking se renewal; Option 2: branch visit. Don’t worry, both are fine."
+ ],
+ "Your documents are verified, the sanction letter will be emailed.": [
+  "Your docs are all good, we’ll send the sanction letter via email.",
+  "All your paperwork has been verified; the sanction letter will be emailed shortly.",
+  "Documents verified, sanction letter on the way via email, sir/madam.",
+  "Your documents are checked and approved, you’ll receive the sanction letter by email.",
+  "We have verified your documents, the sanction letter will be sent to you by email."
+ ],
+ "Koi aur sawal ho toh branch ke landline pe call kijiye.": [
+  "If you have any other questions, just call the branch landline.",
+  "अगर कोई और सवाल है तो ब्रांच के लैंडलाइन पर कॉल कीजिये।",
+  "Any other queries? Give the branch landline a ring.",
+  "कृपया अगर और कुछ पूछना हो तो ब्रांच के लैंडलाइन पर कॉल करें।",
+  "Got more questions? Dial the branch landline right away."
+ ],
+ "Thank you for banking with us, have a nice day.": [
+  "Thanks for banking with us, enjoy your day!",
+  "Thanks a lot for choosing us for your banking, have a wonderful day.",
+  "Thank you for banking with us, wish you a great day ahead.",
+  "Thank you for banking with us, have a nice day!"
+ ],
+ "Kal 10 se 4 ke beech kabhi bhi aa sakte hain.": [
+  "Kal 10:00 se 4:00 ke beech kabhi bhi aa sakte hain.",
+  "Hey, kal 10 se 4 ke beech kabhi bhi aa sakte hain.",
+  "Sir, kal 10 se 4 ke beech kabhi bhi aa sakte hain.",
+  "Kal 10 se 4 ke beech kabhi bhi aa sakte hain, please."
+ ],
+ "Hello, {company} delivery se bol raha hoon, aapka order aaya hai.": [
+  "Hello, main {company} delivery se bol raha hoon, aapka order aa gaya hai.",
+  "Good day, this is {company} delivery speaking; your order has arrived.",
+  "Namaste, main {company} delivery se baat kar raha hoon, aapka order aaya hai.",
+  "Hey, {company} delivery yahan se bol raha hai – aapka order abhi pohoncha hai.",
+  "Dear sir/madam, I am calling from {company} delivery. Your order has been received.",
+  "Aapka order aaya hai, main {company} delivery se bol raha hoon. Dhanyawaad."
+ ],
+ "Sir, main courier wala, aapke gate pe khada hoon.": [
+  "Sir, main courier wala hoon, aapke gate pe khada hoon.",
+  "Sir, I am the courier, standing at your gate.",
+  "Hey Sir, just wanted to let you know ki main courier wala hoon, gate pe khada hoon.",
+  "Respected Sir, I am the delivery person, and I am currently at your gate.",
+  "Sir, I’m the courier guy and I am right outside your gate.",
+  "Sir, I am the courier and I am standing at your gate right now."
+ ],
+ "Ma'am, your {company} package is out for delivery.": [
+  "Hi ma'am, your {company} package is out for delivery.",
+  "Good morning, ma'am. Your {company} parcel has been dispatched.",
+  "Hello ma'am, just letting you know that your {company} package is on its way.",
+  "Hey ma'am, your {company} shipment is out for delivery now.",
+  "Dear ma'am, your {company} package has left the warehouse and is en route.",
+  "Ma'am, your {company} package is currently out for delivery. Please stay tuned."
+ ],
+ "Ghar pe koi hai? Cash on delivery 649 rupaye hai.": [
+  "Are you home? We have a cash on delivery offer of 649 rupees.",
+  "Hi, could you please tell me if anyone is at home? The cash on delivery amount is 649 rupees.",
+  "Hey! Is anyone available at home? The COD is just 649 rupees.",
+  "Good day. Is someone present at home? The cash on delivery charge is 649 rupees.",
+  "Hello, is someone at home? We need to collect 649 rupees cash on delivery."
+ ],
+ "Location thoda samajh nahi aa raha, landmark bataiye.": [
+  "I’m a bit confused about the location, could you please tell me the landmark?",
+  "Location thoda clear nahi ho raha, thoda landmark bata sakte hain?",
+  "I’m not sure where exactly it is – can you give me a landmark?",
+  "Location samajh mein nahi aa raha, please give me the landmark details.",
+  "Location ko lekar thoda uljhan hai, landmark bata denge?"
+ ],
+ "OTP app mein dikhega, wo delivery ke time bata dena.": [
+  "OTP app pe aayega, delivery time pe batana please.",
+  "आपका OTP app में दिखेगा, डिलीवरी के समय बता दें।",
+  "The OTP will pop up on your app. Just let me know when it's delivered.",
+  "OTP app mein aa jayega, jab delivery ho jaye turant batayein.",
+  "Yo, OTP app me dikhega, delivery ke time humein bata dena."
+ ],
+ "Main 10 minute mein pahunch jaunga.": [
+  "I will reach in ten minutes, no worries.",
+  "Within 10 minutes, I will be there.",
+  "Main 10 minute ke andar pahunch jaunga, thik hai?",
+  "In just ten minutes, I will arrive.",
+  "10 minutes mein main aap tak pahunch jaunga."
+ ],
+ "Theek hai, guard ko de deta hoon.": [
+  "Sure, I will hand it over to the guard.",
+  "Bhai, theek hai. Main guard ko de deta hoon.",
+  "Okay, I’ll give it to the guard right away.",
+  "Theek hai, guard ko de dena, boss.",
+  "Sure thing, I’m handing it over to the guard now."
+ ],
+ "Okay ma'am, thank you.": [
+  "Alright ma'am, thank you.",
+  "Sure sir, thank you.",
+  "Got it, ma'am. Thanks a lot.",
+  "Okay madam, thanks a lot for your time.",
+  "Sure thing, ma'am. Thank you.",
+  "Understood, ma'am. Thank you!"
+ ],
+ "Rating de dena please.": [
+  "Kripya rating de dena, thoda sa samay lagaoge?",
+  "Could you kindly give me a rating, please?",
+  "I would really appreciate it if you could rate me, please.",
+  "Hey, can you rate me, please? Just a quick rating would help!",
+  "Sir/Madam, kindly take a moment to rate me, thank you."
+ ],
+ "Hello, {doctor} clinic se bol rahe hain, kal aapka appointment hai.": [
+  "Hi, I am calling from {doctor} clinic. Just confirming, you have an appointment tomorrow.",
+  "Good day, this is {doctor} clinic speaking. Your appointment is scheduled for tomorrow.",
+  "Namaste, {doctor} clinic here. Just a quick reminder that your appointment is tomorrow.",
+  "Hey, it's {doctor} clinic. Your appointment is on the 25th, right? Let me know if you need to reschedule.",
+  "Hello, this is {doctor} clinic. I’m calling to confirm that you have an appointment tomorrow. Do you need any assistance?",
+  "Dear patient, {doctor} clinic calling. Your appointment is set for tomorrow. Please call us if anything changes."
+ ],
+ "Good evening, calling from {city} diagnostics about your reports.": [
+  "Good evening, I’m calling from {city} diagnostics about your reports.",
+  "Good evening, this is {city} diagnostics reaching out regarding your reports.",
+  "Hello, this is a call from {city} diagnostics about your reports—good evening!",
+  "Good evening, I’m calling from {city} diagnostics to discuss your reports.",
+  "Hey, this is {city} diagnostics on the line, speaking about your reports—good evening!",
+  "Good evening, a representative from {city} diagnostics calling to talk about your reports."
+ ],
+ "Kal subah 11 baje aa jaiye, khali pet aana hai.": [
+  "Kal morning 11 o'clock please come over, you need to visit with an empty stomach.",
+  "Kal subah 11:00 pe aajna hai, pet khali ho ke aaana zaroori hai.",
+  "Hey, 11 AM tomorrow morning, please come with a clean stomach for the appointment.",
+  "Kindly be there at 11 AM tomorrow morning; you must arrive with an empty stomach.",
+  "Please show up at 11 o’clock tomorrow morning – make sure you come with a vacant stomach."
+ ],
+ "Your blood test reports are ready, you can collect them.": [
+  "Your blood test reports are ready, please pick them up.",
+  "Your blood test reports are ready – just come in to collect.",
+  "Your blood test reports are ready, you can drop by and get them.",
+  "Your blood test reports are ready, kindly collect them at your earliest convenience.",
+  "Your blood test reports are ready. Please come and collect them whenever you can."
+ ],
+ "Consultation fee 500 hai, counter pe de dijiyega.": [
+  "The consultation fee is ₹500, please pay it at the counter.",
+  "A consultation charge of 500 rupees, kindly hand it over at the counter.",
+  "Sir, 500 rupees is the consultation fee, just drop it on the counter.",
+  "Hey, a 500 rupee fee for the consultation – just give it at the counter.",
+  "Consultation fee 500 rupees, please provide it on the counter."
+ ],
+ "Koi dikkat ho toh clinic pe call kar lijiye.": [
+  "If you face any trouble, just give us a call at the clinic.",
+  "Koi problem ho toh clinic pe turant call kar dijiye, theek hai?",
+  "Please feel free to call the clinic if you run into any difficulties.",
+  "Koi dikkat aayi toh clinic ko call kar dein, no worries.",
+  "Should you encounter any issue, kindly call the clinic right away."
+ ],
+ "Thank you, take care.": [
+  "Thanks a lot, take care!",
+  "Thank you, have a good day!",
+  "Shukriya, khayal rakhiye!",
+  "Much appreciated, take care of yourself.",
+  "Thanks, stay safe and take care.",
+  "I appreciate it, keep well!"
+ ],
+ "Hello sir, {company} se bol rahe hain, aapke liye credit card ka offer hai.": [
+  "Hi sir, this is {company}. We have a credit card offer just for you.",
+  "Namaste sir, {company} bol raha hai, aapke liye credit card ka offer available hai.",
+  "Hello sir, {company} speaking – we have a credit card deal for you, sir.",
+  "Good day, sir. {company} here, and we’re offering you a credit card, sir.",
+  "Sir, this is {company}. We’re calling with a special credit card offer for you."
+ ],
+ "Sir, new broadband plan launch hua hai, 499 mein unlimited.": [
+  "Hi sir, there's a new broadband plan launched, 499 for unlimited usage.",
+  "Sir, aapke liye ek naya broadband plan launch ho chuka hai, sirf 499 mein unlimited.",
+  "Good day sir, we’ve just introduced a new broadband package at 499 rupees, unlimited data.",
+  "Sir, 499 mein unlimited broadband plan launch ho gaya hai, aapko kaam aayega.",
+  "Sir, new broadband plan launch hua hai, 499 mein unlimited data, aapka kaam asaan ho jayega."
+ ],
+ "Ma'am, insurance ke baare mein 2 minute baat kar sakte hain?": [
+  "Hello ma'am, can we have a quick 2‑minute chat about insurance?",
+  "Madam, may I take just two minutes to discuss your insurance options?",
+  "Ma'am, just 2 minutes to talk about insurance, please?",
+  "Sir/Ma'am, 2 minutes for a short insurance discussion would be great, yes?",
+  "Ma’am, can we spare just two minutes to talk insurance?"
+ ],
+ "Aap interested hain toh humara executive aapke ghar aa jayega documents ke liye.": [
+  "If you’re interested, our exec will come to your home for the documents.",
+  "Aap agar interested ho, toh humare executive aapke ghar aa kar documents le aayenge.",
+  "Sir, if you’re interested, we’ll send an executive to your house to collect the papers.",
+  "Aap interested hain, to humara exec ghar aa ke documents le lega.",
+  "If you want it, our executive will visit your home to get the documents."
+ ],
+ "Ye plan aap app se ya store se le sakte hain.": [
+  "You can get this plan either through the app or from a store.",
+  "Aap is plan ko app ya store se le sakte hain.",
+  "You can grab this plan on the app or at a store, simply.",
+  "The plan is available to you via the app or a store.",
+  "Is plan ko app se ya store se le sakte hain, sirf aapko decide karna hai."
+ ],
+ "Aap chahein toh main brochure WhatsApp kar deta hoon.": [
+  "If you want, I can just send the brochure over WhatsApp.",
+  "Aapke liye main brochure WhatsApp kar deta hoon, agar aap chaahein.",
+  "Sure, I can drop the brochure on WhatsApp for you if you want.",
+  "Aap chahein to main brochure WhatsApp par bhej deta hoon.",
+  "Let me send the brochure via WhatsApp, just let me know if that’s fine."
+ ],
+ "Theek hai sir, disturb karne ke liye sorry.": [
+  "Theek hai sir, disturb karne ke liye maaf kijiye.",
+  "Sir, theek hai, aapko disturb karne ke liye sorry.",
+  "Sir, I’m sorry to have disturbed you, but that’s all.",
+  "Theek hai, sir. Apko disturb karne ke liye maaf karna chahta hoon.",
+  "Sir, sorry for the interruption, theek hai.",
+  "Theek hai sir, disturb karne ke liye hum maafi chaahte hain."
+ ],
+ "Not interested? No problem, thank you.": [
+  "Not interested? No worries, thanks a lot!",
+  "अगर आप नहीं चाहेंगे तो कोई बात नहीं, धन्यवाद।",
+  "Not interested? That’s fine, appreciate your time.",
+  "No interest? Alright then, thank you.",
+  "Not interested? No problem, thank you so much!",
+  "If you’re not keen, that’s okay, thank you!"
+ ],
+ "Hello, college office se bol rahe hain, aapka ID card ready hai.": [
+  "Hello, college office se bol raha hoon, aapka ID card ready hai.",
+  "Hey, speaking from the college office, your ID card is ready.",
+  "Good day, this is the college office calling; your ID card has been prepared.",
+  "Namaste, college office se phone kar raha hoon, aapka ID card ready hai, please confirm.",
+  "Sir/Madam, college office ke taraf se call kar raha hoon; your ID card is ready for pickup.",
+  "Hi, college office ka call, aapka ID card ready hai, let me know when you want to collect."
+ ],
+ "Hi, this is the placement cell, your interview is scheduled for Monday.": [
+  "Hello, this is the placement cell. Your interview is scheduled for Monday.",
+  "Hi, it's the placement cell speaking. Your interview will be on Monday.",
+  "Good day! The placement cell here. Your interview is set for Monday.",
+  "Hey, placement cell here. Just letting you know your interview is on Monday.",
+  "This is the placement cell. Your interview is arranged for Monday.",
+  "Greetings! The placement cell. Your interview has been scheduled for Monday."
+ ],
+ "Namaste, hostel office se, aapka room allotment ho gaya hai.": [
+  "Namaste, hostel office se. Aapka room allotment ho gaya hai.",
+  "Hi, this is from the hostel office. Your room allotment has been done.",
+  "Good morning, this is the hostel office. Your room allotment has been finalized.",
+  "Namaste, hostel office here. We’re pleased to inform you that your room has been allotted.",
+  "Hello, this is the hostel office. Your room allotment is complete, and you’re all set.",
+  "Namaste, hostel office speaking. Your room allotment is ready – just check your details."
+ ],
+ "Fees portal pe hi pay kijiye, receipt download kar lijiye.": [
+  "Please pay directly through the fees portal and then download the receipt.",
+  "Fees portal par hi payment karein, aur receipt download kar lein.",
+  "You can pay via the fees portal and then grab the receipt for your records.",
+  "Pay through the fees portal and download your receipt right after.",
+  "Fees portal se hi payment karein aur receipt download kar lein, thik hai?"
+ ],
+ "Please carry two copies of your resume and college ID.": [
+  "Please bring two copies of your resume and college ID.",
+  "Kindly carry two copies of your CV along with your college ID, please.",
+  "Could you bring along two copies of your resume plus your college ID, ok?",
+  "I would like you to have two copies of your resume and also your college ID with you.",
+  "Please make sure you bring two copies of your resume and your college ID.",
+  "I request you to carry two copies of your resume and your college ID, please."
+ ],
+ "Warden sir se milke key le lijiye.": [
+  "Warden sir se mil ke key le lijiye.",
+  "Please meet the warden sir and get the key.",
+  "Hey, meet the warden sir, he can hand over the key.",
+  "Kindly meet the warden sir and take the key from him.",
+  "Just go and meet the warden sir to get the key.",
+  "Warden sir ko milkar key le lijiye, please."
+ ],
+ "All the best.": [
+  "All the best, buddy!",
+  "Wishing you all the best.",
+  "All the best to you, sir/madam.",
+  "All the best, and take care!",
+  "All the best! Hope everything goes well.",
+  "All the best. Best wishes from us!"
+ ],
+ "Aur koi query ho toh office aa jaiye.": [
+  "If you have any more questions, feel free to drop by the office.",
+  "Any other queries? Just swing by the office, we’ll help you.",
+  "किसी भी तरह का सवाल हो तो ऑफिस आकर पूछ लीजिए।",
+  "Got any other queries? Come visit the office at your convenience.",
+  "Should you need further clarification, do visit our office.",
+  "अगर कुछ और पूछना है तो ऑफिस आकर बता दें।"
+ ],
+ "Namaste, bijli vibhag se, kal aapke area mein maintenance ke liye 10 se 2 light nahi rahegi.": [
+  "Namaste, bijli vibhag se bol raha hoon, kal aapke area mein maintenance ke liye 10 se 2 light band rahegi.",
+  "Hi, this is from the electricity department. Just letting you know that tomorrow in your area, 10 to 2 lights will be switched off for maintenance.",
+  "Namaste, aapka bijli vibhag bol raha hai. Kal aapke area mein maintenance ke dauran, 10 se 2 lights bandh rahengi.",
+  "Good morning, this is the electricity board calling. Please be aware that tomorrow in your locality, lights numbered 10 to 2 will be off for maintenance.",
+  "Namaste, bijli vibhag se. Aapke area mein kal maintenance ke liye 10 se 2 light band ho jayenge.",
+  "Namaste, bijli vibhag se aapko batana hai ki kal aapke area mein maintenance ke dauraan 10 se 2 light off rahengi."
+ ],
+ "Hello, gas agency se, aapka cylinder booking confirm hai.": [
+  "Hello, gas agency se bol rahe hain, aapka cylinder booking confirm ho gaya hai.",
+  "Namaste, this is the gas agency. Your cylinder booking has been confirmed.",
+  "Good morning! From the gas agency – your cylinder booking is now confirmed.",
+  "Hi, gas agency here. Just letting you know your cylinder booking is confirmed.",
+  "Hey, gas agency speaking. Your cylinder booking is confirmed, no worries!",
+  "Good evening, this is the gas agency. Your cylinder booking is fully confirmed."
+ ],
+ "Bill aap official app ya website se hi bhariye.": [
+  "Bill aap official app ya website se hi bhariye, please!",
+  "Please pay your bill only through the official app or website.",
+  "Kindly settle the bill via the official app or website only.",
+  "Sir, bill ko official app ya website se hi bhariye, ok?",
+  "Bill, aapko official app ya website se hi bharna padega, thik hai?",
+  "Bill aap official app ya website se hi bhariye – no other option."
+ ],
+ "Delivery kal tak ho jayegi, cash ya online de sakte hain.": [
+  "The delivery will be ready by tomorrow; you can pay either cash or online.",
+  "Delivery tomorrow, you can pay in cash or online.",
+  "Kal tak delivery ho jayegi, cash ya online de sakte hain.",
+  "Your package will reach by tomorrow – you can pay with cash or online.",
+  "Delivery kal tak ho jayegi, cash ya online de sakte hain. (You can choose either)"
+ ],
+ "Dhanyavaad.": [
+  "Dhanyavaad, aapka bahut dhanyawaad.",
+  "Thank you very much.",
+  "Shukriya, aapke samay ke liye.",
+  "धन्यवाद! आपका दिन शुभ रहे।",
+  "Thanks a ton! Take care.",
+  "Dhanyavaad. Aapka din mangalmai ho."
+ ],
+ "Thank you ji.": [
+  "Thanks a lot, ji!",
+  "Shukriya ji, aapka bahut dhanyavaad.",
+  "I appreciate it, ji. Thanks a ton.",
+  "Aapke sahayog ke liye dhanyavaad, ji.",
+  "Ji, aapka bohot bohot shukriya."
+ ],
+ "Hello, main {city} police station se constable bol raha hoon, aapka passport verification hai.": [
+  "Hey, main {city} police station se constable bol raha hoon, aapka passport verification hai.",
+  "Good day, I am a constable from the {city} police station calling about your passport verification.",
+  "Namaste, main {city} police station ka constable hoon, aapka passport verification check karna hai.",
+  "Hello, this is a constable from the {city} police station. We need to verify your passport.",
+  "Hi, main {city} police station se constable bol raha hoon. Aapka passport verification ke liye call kar raha hoon.",
+  "Sadar Pranam, main {city} police station ka constable hoon, aapke passport ki verification karni hai."
+ ],
+ "Namaste, thane se call hai, aapki gaadi chori ki complaint ka update hai.": [
+  "Namaste, aapko call kar raha hoon, aapki gaadi chori ki complaint ka update hai.",
+  "Hello, this is a call from you, just to give you an update on your car theft complaint.",
+  "Namaste, aapki gaadi chori ki shikayat ka update aapko dene ke liye call kiya hai.",
+  "Hi there, just a quick update regarding the car theft complaint you filed.",
+  "Namaste, aapse call hai, aapki gaadi chori complaint ka latest status batana chahta hoon.",
+  "Hello, I’m calling about your car theft complaint – here’s the latest update."
+ ],
+ "Kal apne original documents lekar thane aa jaiye.": [
+  "Please bring your original documents tomorrow to the office.",
+  "Kal aapke original papers leke aayenge to thoda time de denge.",
+  "Kindly remember to bring your original documents tomorrow for verification.",
+  "Don't forget to bring your original documents tomorrow, okay?",
+  "Kal aapke original documents lekar aaj ke din aana, please!"
+ ],
+ "Aap station aake FIR ki copy le sakte hain, koi fees nahi hai.": [
+  "You can come to the station and grab a copy of the FIR, no charge at all.",
+  "Aap police station par aakar FIR ki photocopy le sakte ho, koi fee nahi lagegi.",
+  "Simply visit the station, get a copy of the FIR – it’s free, no fee whatsoever.",
+  "Aap station par jaake FIR ki copy le sakte hain, bina kisi fee ke.",
+  "Head over to the station to obtain a copy of the FIR; it’s absolutely free, no cost involved."
+ ],
+ "Thana 10 baje khulta hai.": [
+  "Thana 10 baje khulta hai, bhai.",
+  "The police station opens at 10 AM.",
+  "Thana ki darwaza 10 baje khul jaati hai.",
+  "Sir, Thana 10:00 am se khulti hai.",
+  "At ten o' clock, the thana opens.",
+  "Bhai, thana 10 baje khulta hai, dhyaan rahe."
+ ],
+ "Theek hai, dhanyavaad.": [],
+ "Hey {friend} here, kya kar raha hai?": [
+  "Hey {friend}, main hoon, kya chal raha hai?",
+  "Hello {friend}, it's me, kya kaam kar rahe ho?",
+  "Namaste {friend}, main hoon, aap kya kar rahe hain?",
+  "Hey {friend}! Yaha main, kya kaam mein busy ho?",
+  "Hello {friend}, it's your buddy, how are you doing today?",
+  "Hey {friend}, main aapki taraf se call kar raha hoon, kya kar rahe ho?"
+ ],
+ "Arre sun, kal ki party ka plan kya hai?": [
+  "Hey buddy, what’s the plan for tomorrow’s party?",
+  "Arre, kal ki party ka schedule kya hai? Batao",
+  "Listen, kal ki party ka agenda kya hai? Please share",
+  "Hello, can you tell me what’s the plan for tomorrow’s party?",
+  "Arre, kal ki party ka plan kya hai? Toh batao!"
+ ],
+ "Mere bank ka app kaam nahi kar raha, tera chal raha hai kya?": [
+  "My bank app isn’t working, does your one run fine?",
+  "Mere bank ka app kaam nahi kar raha, kya tumhara app chal raha hai?",
+  "Hey, mera bank ka app kaam nahi kar raha, tumhara kaam kar raha hai?",
+  "Mere bank ka app kaam nahi kar raha. Kya aapka app sahi chal raha hai?",
+  "Mere bank ka app kaam nahi kar raha, aapka app kaam kar raha kya?"
+ ],
+ "Yaar mujhe police verification ke liye thane jaana hai kal, saath chalega?": [
+  "Yaar, mujhe police verification ke liye thaan jaana hai kal, saath chalega?",
+  "Buddy, I have to go to the police station tomorrow for verification, can you come along?",
+  "Sir/Madam, I need to visit the police verification office tomorrow; would you be able to accompany me?",
+  "Hey bro, gotta head to the police verification spot tomorrow – you wanna join?",
+  "Mere dost, kal police verification ke liye thaan jaana hai, kya tum saath aaoge?",
+  "I have an appointment at the police verification office tomorrow. Could you please come with me?"
+ ],
+ "Bijli ka bill itna zyada aaya is baar, 3000 rupaye.": [
+  "Hey, this month my electricity bill is so high, it's ₹3000.",
+  "Sir, this time my power bill came up to ₹3000, quite a lot.",
+  "I just got the electricity bill, and it's ₹3000 – a lot this month.",
+  "Arre, this month's bill is ₹3000, that's a lot, you know?",
+  "The electricity bill for this period has risen to ₹3000, which is quite high."
+ ],
+ "Mess fees bharni hai portal pe, link bhej de na.": [
+  "I have to pay the mess fees via the portal, please send me the link.",
+  "Mess fees fill karne ka hai portal pe, link bhejiye ji.",
+  "Need to settle my mess fees on the portal—can you drop me the link?",
+  "I need to pay the mess fees online; kindly send the link.",
+  "Mess fees bharne ke liye portal ka link bhej dijiye, please."
+ ],
+ "Chal theek hai, baad mein milte hain.": [
+  "Okay, koi baat nahi. Baad mein milte hain.",
+  "Sure, no problem. Let's catch up later.",
+  "Sure thing, we’ll talk later then.",
+  "Bhai, theek hai. Baad mein milenge.",
+  "Fine, no worries. We’ll connect later."
+ ],
+ "Okay bye, call karta hoon raat ko.": [
+  "Okay bye, raat ko call karta hoon.",
+  "Alright, will call you at night. Bye!",
+  "Fine, I will phone you tomorrow night. Goodbye!",
+  "Sure thing, I'll give you a ring in the evening. Bye!",
+  "Okay, raat ko call karunga. Bye!",
+  "Got it, I'll call you at night. Bye."
+ ],
+ "Hello, {bank} relationship manager bol raha hoon, aapke account ke baare mein ek update tha.": [
+  "Hi, main {bank} ka relationship manager hoon, aapke account ke liye ek quick update hai.",
+  "Good afternoon, this is your {bank} relationship manager speaking, there’s a quick update about your account.",
+  "Namaste, main {bank} ka relationship manager bol raha hoon, aapke account ki ek jankari deni hai.",
+  "Hello sir/madam, {bank} ke relationship manager se baat ho rahi hai, aapke account ke liye ek update hai.",
+  "Hey, aapka {bank} relationship manager baat kar raha hai, account ke liye ek choti si jankari.",
+  "Good evening, I am {bank}’s relationship manager calling, there’s a brief update regarding your account."
+ ],
+ "Namaste ji, {bank} se, aapka naya cheque book branch mein aa gaya hai.": [
+  "Namaste ji, {bank} se bol raha hoon, aapka naya cheque book branch mein aa gaya hai.",
+  "Hello sir/madam, this is from {bank}. Your new cheque book has arrived at the branch.",
+  "Namaste, {bank} here. Your fresh cheque book is ready at the branch.",
+  "Good day, sir, {bank} speaking. Your cheque book is now available in the branch.",
+  "Namaste ji, main {bank} se bol raha hoon. Aapka naya cheque book branch mein aa gaya hai, kripya aakar le jaiye.",
+  "Hi, this is {bank}. Your new cheque book has reached the branch; please collect it at your convenience."
+ ],
+ "Hi, calling from {bank}, your locker rent is due next month, just a reminder.": [
+  "Hello, yaar, I’m calling from {bank}. Your locker rent ka bill next month due hai, just a friendly reminder.",
+  "Good morning, this is {bank}. Your locker rent will be due next month – just wanted to give you a heads‑up.",
+  "Namaste, {bank} speaking. Please note that your locker rent is payable next month; just a quick reminder.",
+  "Hey, I’m calling from {bank}. Your locker rent will be due next month – just a quick nudge for you.",
+  "Hi there, this is {bank}. I’m reminding you that your locker rent is due next month, so keep it in mind.",
+  "Good day, {bank} here. Your locker rent will be due next month—just a friendly reminder from us."
+ ],
+ "Jab time mile branch aa jaiye, koi jaldi nahi hai.": [
+  "Jab bhi samay mile, branch aaiye, koi rush nahi hai.",
+  "Jab aapke liye convenient ho, branch mein aaiye, koi hurry nahi.",
+  "Jab aapke schedule ke mutabik ho, branch aaiye, koi urgency nahi.",
+  "When you find the time, drop by the branch – no hurry at all.",
+  "Whenever you can, come to the branch; there's no rush."
+ ],
+ "Aapko kuch share nahi karna hai phone pe, bas branch mein sign karna hai.": [
+  "Aapko phone pe kuch share nahi karna hai, bas branch mein sign karna hai.",
+  "You don't have to share anything over the phone, just come to the branch to sign.",
+  "Aapko phone pe koi bhi document share nahi karna, sirf branch mein sign karna hai.",
+  "There's no need to give any details over the phone, you just need to come to the branch for the signature.",
+  "Aapko phone par kuch bhi share nahi karna; bas branch me aake sign karna hai.",
+  "No need for you to disclose anything on the call; just go to the branch and sign."
+ ],
+ "You can also check this in your net banking under the service requests section.": [
+  "You can also see it in your netbanking under the Service Requests section.",
+  "You can also look it up in your net‑banking app, under Service Requests.",
+  "You can check it from your online banking under the Service Requests area, buddy.",
+  "You can also verify this via your net banking, by going to the Service Requests section.",
+  "In your net banking, you can find it under the Service Requests section."
+ ],
+ "Aapke registered email pe bhi details bhej di hain, dekh lijiye.": [
+  "We’ve also sent the details to your registered email, please take a look.",
+  "Your registered email got the info too, just check it.",
+  "I have sent the details to your registered email as well – please review.",
+  "Hey, I've forwarded the information to your registered email too, go check it out.",
+  "I’ve already sent everything to your registered email; kindly look at it."
+ ],
+ "Koi doubt ho toh customer care ka number card ke peeche likha hai, wahi call kijiye.": [
+  "अगर कोई भी शंका हो तो कस्टमर केयर का नंबर कार्ड के पीछे लिखा हुआ है, बस उसी पर कॉल करें.",
+  "दूरद्विधा हो तो ग्राहक सेवा का नंबर कार्ड के पीछे है, उसी पर फोन कर दें.",
+  "Koi bhi doubt ho toh customer care ka number card ke peeche hai, wahi pe call kar lijiye.",
+  "Agar koi confusion ho, to customer care ka number card ke peeche hi diya hua hai, use hi dial kare.",
+  "अगर कोई सवाल है तो ग्राहक सेवा का नंबर कार्ड के पीछे लिखा हुआ है, उसी पर कॉल करें."
+ ],
+ "Aapka din shubh ho.": [
+  "Hope you have a nice day.",
+  "Your day is blessed, wish you all the best.",
+  "Shubh din aapko, all the best to you.",
+  "May your day be auspicious.",
+  "Wishing you a very good day."
+ ],
+ "Good afternoon ma'am, {company} se, aapke liye special discount offer hai.": [
+  "Good afternoon ma'am, I am calling from {company} and we have a special discount offer just for you.",
+  "Good afternoon, madam, this is {company} speaking. We have a special discount offer that we’d like to share with you.",
+  "Good afternoon ma’am, I am with {company}. We have an exclusive discount offer for you right now.",
+  "Good afternoon ma’am, from {company} here – we have a special discount offer you might like.",
+  "Good afternoon, ma'am. This is {company}. We have a special discount offer that could be of interest to you.",
+  "Good afternoon ma’am, this is {company}. We’re excited to offer you a special discount just for today."
+ ],
+ "Hello sir, health insurance ka naya plan aaya hai, 2 minute sunenge?": [
+  "Namaste sir, health insurance ka naya plan launch hua hai, aap 2 minute ke liye sunenge?",
+  "Hello sir, there’s a brand-new health insurance plan, can we spend two minutes discussing it?",
+  "Sir, health insurance ka naya plan launch ho gaya hai, 2 minute sunenge kya?",
+  "Good day sir, a new health insurance plan has arrived – could you spare two minutes to hear about it?",
+  "Hey sir, new health insurance plan is here, 2 minute sunenge?",
+  "Sir, ek naya health insurance plan launch hua hai, aap 2 minute sunenge?"
+ ],
+ "Hi, main real estate company se, {city} mein naye flats launch hue hain.": [
+  "Hello, main real estate company se bol raha hu, {city} mein naye flats launch hue hain.",
+  "Namaste, main real estate company ka representative hu, {city} mein fresh flats launch hue hain.",
+  "Hi, I’m calling from a real estate firm. We have just launched brand-new flats in {city}.",
+  "Good morning, yeh real estate company se hai. {city} mein abhi naye flats launch ho gaye hain.",
+  "Hey, main real estate company se baat kar raha hu, {city} mein naye flats abhi launch hue hain, check karein.",
+  "Sir/Madam, I am from a real estate company. We have launched new flats in {city} just now."
+ ],
+ "Aap chahein toh humari website pe details dekh sakte hain.": [
+  "If you want, you can check the details on our website.",
+  "Aap chahein, humari site pe sab info dekh sakte ho.",
+  "If you wish, you can view the details on our website at your convenience.",
+  "Aapko chahe toh humare website pe sab details dekh sakte hai.",
+  "Should you wish to, our website has all the details you can look at."
+ ],
+ "Koi pressure nahi hai sir, aap soch ke batana.": [
+  "No pressure at all, sir. Take your time and let me know.",
+  "There's absolutely no rush, sir. Just think it over and tell me.",
+  "Sir, no pressure—just let me know after you consider it.",
+  "Koi daud nahi, sir. Jab bhi soch kar bata dein.",
+  "No pressure, ma'am. Take your time and tell me when you’re ready."
+ ],
+ "Main aapko brochure email kar deta hoon, pasand aaye toh call back kijiye.": [
+  "I will send you the brochure via email; if you like it, just give us a call back.",
+  "Main aapko brochure email karunga, aapko jo pasand aaye, please call back.",
+  "I'll email you the brochure. If it suits you, do call us back.",
+  "Main aapko brochure email karke bhej raha hoon; agar aapko pasand aaye to humse wapas phone karein.",
+  "I'll drop the brochure to your email; if it looks good, please call us back."
+ ],
+ "Theek hai, aapka time dene ke liye dhanyavaad.": [
+  "Sure, thanks for taking the time, aapka time dene ke liye dhanyavaad.",
+  "Aapka time dene ke liye dhanyavaad, thik hai.",
+  "Dhanyavaad aapka time dene ke liye. Theek hai.",
+  "Thanks for your time, aapka time dene ke liye dhanyavaad.",
+  "Theek hai, aapka time dene ke liye dhanyavaad. Aapka day achha rahe."
+ ],
+ "Okay sir, have a nice day.": [
+  "Sure sir, have a nice day! 😊",
+  "Alright, sir. Hope you have a great day ahead.",
+  "Okay sir, wishing you a pleasant day!",
+  "Got it, sir. Have an awesome day.",
+  "Sure thing, sir. Have a good day.",
+  "Okay sir, enjoy your day. Bye!"
+ ],
+ "Hello beta, accounts section se, aapki second installment ki fees pending hai.": [
+  "Hey beta, from accounts side, you have a pending fee for your second installment.",
+  "Hello, just checking from the accounts office—your second installment fee is still pending.",
+  "Good day, this is a friendly reminder from Accounts that your second installment dues are still pending.",
+  "Hi beta, accounts ka kehna hai ki aapki second installment ki fees abhi tak pending hain.",
+  "Dear sir/madam, please note that the second installment fee in the accounts section is pending.",
+  "Hey, just a quick call from accounts—your second installment fee is yet to be cleared."
+ ],
+ "Hi, this is the exam cell, your hall ticket is ready for download.": [
+  "Hey, this is the exam cell speaking. Your hall ticket is ready for download, just hit the link I’m sending you.",
+  "Good morning, I’m calling from the exam cell. Your hall ticket is available for download now – let me know if you need help accessing it.",
+  "Hello, this is the exam cell. Your hall ticket has been prepared and is ready for download.",
+  "Namaste, I am from the exam cell. Your hall ticket is ready for download, so please click the attachment to retrieve it.",
+  "Hi, this is the exam cell on the line. Your hall ticket has been made available for download; simply follow the link I’ve just forwarded.",
+  "Greetings, the exam cell here. Your hall ticket is now ready to download – just tap the link I’ve sent you to get it."
+ ],
+ "Namaste, scholarship office se, aapke documents verify ho gaye hain.": [
+  "Hello, this is the scholarship office. Your documents have been verified.",
+  "Namaskar, scholarship office ke taraf se. Aapke papers ab verified ho chuke hain.",
+  "Hi, I'm calling from the scholarship office. Your documents are now verified.",
+  "Namaste, scholarship office se. Aapke documents ab confirm ho gaye hain.",
+  "Good day, this is the scholarship office. We have successfully verified your documents."
+ ],
+ "Fees sirf college ERP portal se ya bank challan se jama karni hai.": [
+  "Sir, fees sirf college ke ERP portal se ya bank challan ke zariye hi jama karni hogi.",
+  "Fees are to be paid only via the college ERP portal or by a bank challan.",
+  "Fees ka payment sirf ERP portal ya bank challan se hi ho sakta hai.",
+  "College ERP portal ya bank challan se hi fees jama karni hongi, bhai.",
+  "Fees sirf college ke ERP portal se, ya bank challan ke jariye, hi jama ki ja sakti hain."
+ ],
+ "Aap portal pe login karke download kar lijiye, kisi ko password mat batana.": [
+  "Portal pe login karke download kar le, password kisi ko na dein.",
+  "Please login to the portal, download the file, and do not share the password with anyone.",
+  "Log in to the portal and download the file; keep the password confidential, no sharing allowed.",
+  "Aap portal pe login karke download kar le, password kisi se na batayein, samjhe?",
+  "Kindly log into the portal, download the required document, and make sure the password stays private."
+ ],
+ "Scholarship seedha aapke bank account mein aayegi, aapko kuch pay nahi karna.": [
+  "Scholarship directly aapke bank account mein deposit ho jayegi, aapko koi amount pay karne ki zaroorat nahi.",
+  "Aapko koi payment nahi karna. Scholarship seedha aapke bank account mein jayega.",
+  "Aapke bank account mein seedha scholarship aayega; koi bhi paise pay karne ki koi zaroorat nahi hai.",
+  "The scholarship will be credited straight into your bank account, no payment required from you.",
+  "You won't need to pay anything; the scholarship will go straight into your bank account."
+ ],
+ "Last date 15 tareekh hai, yaad rakhna.": [
+  "Hey, 15th date last hai, please remember.",
+  "Sir, last date is 15 tareekh; kindly keep it noted.",
+  "Bhai, 15th ko last date hai, bas yaad rakh lena.",
+  "Just a reminder: the last date is 15 tareekh – don’t forget.",
+  "Please note, 15th is the final date; keep it in mind."
+ ],
+ "Okay, all the best for exams.": [
+  "All the best for exams, buddy! Best wishes, champ.",
+  "Wishing you all the very best for your exams, sir.",
+  "Good luck on your exams! Hope you ace them all.",
+  "Sending you the best vibes for your upcoming exams.",
+  "May you get top marks in your exams. Best of luck!",
+  "All the best for your exams, dear. Stay focused and succeed."
+ ],
+ "Hello, bijli vibhag se, aapke area mein naya smart meter lagna hai, kal technician aayega.": [
+  "Hello, bijli vibhag se bol raha hoon. Aapke area mein naya smart meter lagna hai, kal technician aayega.",
+  "Good morning, this is from the electricity department. We need to install a new smart meter at your place; a technician will come tomorrow.",
+  "Namaste, bijli vibhag ka call. Aapke area mein smart meter lagane ka kaam hai, kal technician aayega.",
+  "Hey, bijli department speaking. We have to set up a smart meter in your area; the technician will visit tomorrow.",
+  "Sir/Madam, this is from the electricity wing. A new smart meter has to be installed at your address, and a technician will arrive tomorrow.",
+  "Greetings, bijli vibhag here. A smart meter is scheduled for installation in your area; a technician will come tomorrow to set it up."
+ ],
+ "Namaste, water supply office se, kal subah paani nahi aayega pipeline repair ki wajah se.": [
+  "Namaste, water supply office se bol rahe hain. Kal subah paani nahi aayega, pipeline repair ke kaaran.",
+  "Hello, this is the water supply office. Please note that tomorrow morning there will be no water due to pipeline maintenance.",
+  "Good day, from the water supply office. Unfortunately, there will be no water tomorrow morning because the pipeline is being repaired.",
+  "Namaste! Ye water supply office ka call hai. Kal subah paani ki supply bandh rahegi, pipeline ki marammat chal rahi hai.",
+  "Hi, this is the water supply office. Just informing you that tomorrow morning the water service will be interrupted for pipeline repair work.",
+  "Namaste, water supply office se bolte hain. Kal subah pipeline ke repair ke kaaran paani ka flow rukega."
+ ],
+ "Hi, gas agency se bol rahe hain, aapka KYC update pending hai, agency aake kara lijiye.": [
+  "Hello, this is from the gas agency. Your KYC update is still pending. Please visit the agency to complete it.",
+  "Hey, gas agency yahan bol rahi hai ki aapka KYC update pending hai. Agency aa kar kara lijiye.",
+  "Good morning, this is the gas agency calling. Your KYC update remains pending; kindly come to the agency to finish it.",
+  "Namaste, gas agency se baat kar raha hu. Aapka KYC update abhi pending hai. Agency aa kar kar lijiye.",
+  "Hi, gas agency calling. Your KYC update is pending – please visit the agency to get it done."
+ ],
+ "Aapka bill last date se pehle official app pe bhar dijiye, late fee nahi lagegi.": [
+  "Please pay your bill on the official app before the last date, you won’t get a late fee.",
+  "Aapka bill last date se pehle app pe bhar do, late fee lagne ka koi chance nahi.",
+  "Kindly settle your bill via the official app before the due date – no late charge will apply.",
+  "Aapka bill last date se pehle app pe bhar lo, late fee lagne se bacho.",
+  "Pay your bill on the official app before the last date; you won’t be charged a late fee."
+ ],
+ "Technician ka ID card zaroor check kar lena, koi cash nahi dena hai.": [
+  "Technician ka ID card check karo, cash dene ki koi jarurat nahi.",
+  "Please verify the technician's ID card, no cash payment is required.",
+  "Technician ki ID card check kar lena, cash ki zaroorat nahi hai.",
+  "Make sure to check the technician’s ID card; we don’t need any cash from you.",
+  "Technician ka ID card zaroor confirm kar lena, cash ka koi transaction nahi hoga."
+ ],
+ "Aadhaar aur connection card lekar agency office aa jaiye.": [
+  "Aadhaar aur connection card leke agency office aa jao.",
+  "Kindly bring your Aadhaar and connection card to the agency office.",
+  "Aapke Aadhaar card aur connection card lekar agency office aana zaroori hai.",
+  "Please come to the agency office with your Aadhaar and connection card.",
+  "Aadhaar aur connection card lekar agency office aayiye, thoda jald.",
+  "Le aao apna Aadhaar card aur connection card, phir agency office me aao."
+ ],
+ "Koi sawal ho toh helpline 1912 pe call kijiye.": [
+  "Koi sawaal ho toh helpline 1912 pe call kijiye.",
+  "If you have any questions, just call helpline 1912.",
+  "Agar koi doubt ho, please dial 1912 for help.",
+  "Got any queries? Ring helpline 1912 right away.",
+  "Sawal ho to helpline 1912 par call karein.",
+  "For any questions, call the helpline at 1912 immediately."
+ ],
+ "Namaste, {city} police se, aapki complaint number ke baare mein call kiya tha.": [
+  "Hello, this is {city} police. I was calling regarding your complaint number.",
+  "Good day, I am reaching out from {city} police to discuss the complaint number you registered.",
+  "Hi, {city} police here. Just wanted to talk about the complaint number you provided.",
+  "Namaskar, main {city} police se bol raha hoon. Aapki complaint number ki jankari ke liye call kiya hai.",
+  "Good morning, this is {city} police. We are following up on the complaint number you mentioned."
+ ],
+ "Hello madam, beat constable bol raha hoon, society mein verification chal raha hai.": [
+  "Hello madam, I am the beat constable. Society mein verification chal raha hai.",
+  "Good day ma'am, this is the beat constable calling. Verification is happening in the society.",
+  "Namaste madam, main beat constable bol raha hoon. Society mein verification ka process chal raha hai.",
+  "Hi madam, it's the beat constable. Verifying residents in the society right now.",
+  "Dear madam, this is the beat constable. Society mein aaj verification ho raha hai.",
+  "Hello madam, beat constable speaking. Verification activity is underway in the society."
+ ],
+ "Traffic police se call hai, aapki gaadi ka challan pending dikha raha hai.": [
+  "Traffic police calling, your car has a pending challan, sir.",
+  "This is a traffic police call; your vehicle challan is still pending, please note.",
+  "Traffic police se aapko batana hai ki aapki gaadi ka challan abhi pending hai.",
+  "Hey, traffic police is calling – your car challan is still pending. Need to clear it.",
+  "Traffic Police se aapko call aaya hai, aapki gaadi ka challan abhi pending status mein hai."
+ ],
+ "Challan aap official parivahan website pe hi bhariye, kisi ko cash mat dijiye.": [
+  "Challan official parivahan website pe hi bhariye, cash koi mat dena.",
+  "Please pay the challan only through the official Parivahan website, don’t give cash to anyone.",
+  "Challan ko official Parivahan website pe hi online fill karein, cash koi bhi ko na dein.",
+  "You should fill the challan via the official Parivahan site; do NOT hand over cash to anyone.",
+  "Challan bharne ke liye sirf official Parivahan website ka use karein, cash kisi ko na de.",
+  "Pay the challan online on the official Parivahan portal and avoid giving any cash to someone."
+ ],
+ "Aap jab free ho thane aa jaiye, apna ID proof le aana.": [
+  "Aap jab free ho, then aaiye, apna ID proof le aana.",
+  "Jab aap khali hon, please aa jaiye aur apna ID proof layein.",
+  "Whenever you’re free, kindly come over and bring your ID proof.",
+  "Jab aapko suvidha ho, aaiye, apna ID proof laaiye.",
+  "Aap jab time nikaale, please aaiye, ID proof ke saath.",
+  "Once you’re available, please visit us with your ID proof."
+ ],
+ "Kuch pay nahi karna hai, bas statement dena hai station pe.": [
+  "I don't need to pay anything, just want to give a statement at the station.",
+  "Mujhe kuch bhi pay nahi karna hai, sirf statement dena hai station pe.",
+  "I don't owe anything; I just need to submit a statement at the station.",
+  "Bas statement dena hai station pe, koi pay nahi karna.",
+  "I have no payment to make, just need to give a statement at the station."
+ ],
+ "Aapka passport verification ho gaya hai, report aage bhej di hai.": [
+  "Your passport’s been verified, I’ve already forwarded the report.",
+  "Passport ki verification ho chuki hai, report aage bhej di gayi hai.",
+  "I’ve checked your passport and sent the report ahead.",
+  "Your passport has been verified, the report’s on its way now.",
+  "Passport ki verification ho chuki hai, main report aage bhej raha hoon."
+ ],
+ "Aur koi pareshani ho toh 112 pe call kar sakte hain.": [
+  "If you face any issue, you can call 112.",
+  "Koi bhi problem ho, 112 pe call kar lein.",
+  "Should you need any help, simply dial 112.",
+  "Jab koi dikkat ho, 112 pe call karna na bhulein.",
+  "Agar koi mushkil ho, 112 pe call kar sakte hain."
+ ],
+ "Chalo theek hai, namaste.": [
+  "Sure, that's fine. Namaste.",
+  "Okay, sounds good. Namaste.",
+  "Chalo, thik hai, namaste ji.",
+  "Sure, that's all right. Namaste.",
+  "Alright, all set. Namaste."
+ ],
+ "Namaste, {bank} fraud monitoring team, aapke card pe abhi ek transaction hua hai, kya wo aapne kiya tha?": [
+  "Namaste, {bank} fraud monitoring team bol raha hoon, aapke card par abhi ek transaction hua hai, kya ye aapne kiya tha?",
+  "Hello, this is the {bank} fraud monitoring team. Aapke card pe abhi ek transaction hua hai, kya ye aapne kiya?",
+  "Good day, {bank} fraud monitoring team speaking. Aapke card par abhi ek transaction hua hai. Kya yeh aapne kiya tha?",
+  "Namaskar, {bank} fraud monitoring team. Aapke card par abhi ek transaction hua hai; kya yeh aapne kiya tha?",
+  "Hey, yeh {bank} fraud monitoring team hai. Aapke card pe abhi ek transaction hua, kya aapne kiya tha?",
+  "Hi, this is the {bank} fraud monitoring team. Aapke card par ek transaction hua hai abhi, kya yeh aapka hi tha?"
+ ],
+ "Hello, this is {bank} calling to confirm a card payment made a few minutes ago.": [
+  "Hi, this is {bank} calling to confirm a card payment you made a few minutes ago.",
+  "Hello, this is {bank}. I’m just calling to check that your card payment from a few minutes ago went through.",
+  "Namaste, {bank} speaking. I’d like to confirm the card transaction that happened just a few minutes ago.",
+  "Hey! It’s {bank} on the line. Quick call to verify your card payment from a few minutes back.",
+  "Good day, this is {bank}. I’m calling to make sure the card payment you made a few minutes ago was successful.",
+  "This is {bank} calling. Just wanted to confirm your recent card payment made a few minutes ago."
+ ],
+ "Sir, {bank} se automated alert call, aapke card se online payment hua hai.": [
+  "Sir, {bank} se automated alert call hai, aapke card se online payment hua hai.",
+  "Good day Sir, this is an automated alert from {bank}. We’ve detected an online payment on your card.",
+  "Hi Sir, this is a quick automated notice from {bank}—your card was used for an online payment.",
+  "Sir, {bank} is calling to inform you that an online payment was made using your card.",
+  "Namaste Sir, {bank} ka automated alert hai—aapke card se online payment kiya gaya hai.",
+  "Hello Sir, just a quick automated alert from {bank}: your card was used for an online transaction."
+ ],
+ "Agar aapne nahi kiya toh card ke peeche wale number pe call karke block karwa dijiye.": [
+  "If you haven't done it, just call the number on the back of the card and get it blocked.",
+  "Agar aapne abhi tak nahi kiya, card ke peeche wale number pe call karke block karwa dijiye.",
+  "If you haven't, please call the back side number of the card and request a block.",
+  "Nahi kiya? Toh card ke peeche wala number dial karo, aur block karwa lo.",
+  "Should you still need to do it, simply phone the number on the back of the card to block it.",
+  "Agar abhi tak kiya nahi, to card ke peeche wale number pe call karo aur block karwa lo."
+ ],
+ "We will never ask for your OTP, PIN or CVV, please don't share them with anyone.": [
+  "We will never ask for your OTP, PIN or CVV, please don’t share them with anyone.",
+  "We’ll never ask for your OTP, PIN or CVV – so please keep those secrets safe and don’t share them.",
+  "We assure you we won’t request your OTP, PIN or CVV; kindly refrain from sharing them with anyone.",
+  "Rest assured, we’ll never need your OTP, PIN or CVV. Please do not disclose them to anyone.",
+  "We’ll never ask for your OTP, PIN or CVV, so please keep them confidential and share with no one.",
+  "Just to clarify, we’ll never ask for your OTP, PIN or CVV – kindly keep them private and don’t reveal them."
+ ],
+ "Aap app mein jaake khud card block kar sakte hain, humein koi details mat dijiye.": [
+  "Aap app se hi card block kar sakte ho, koi info share mat karo.",
+  "Aap apne phone app me jaake card block kar sakte hain; hume details na batayein.",
+  "Bilkul, app mein jaake apna card block kar lijiye, hume koi details nahi chahiye.",
+  "Aap app open karke card block kar sakte hai, humein koi detail dene ki jarurat nahi.",
+  "Koi tension na lo, apne app se card block kar lo; hume details ki zaroorat nahi."
+ ],
+ "If this was you, no action is needed.": [
+  "Agar aap hi ho to koi kaam nahi karna padega.",
+  "If this is you, no action required.",
+  "Jab aap hi hote, to koi step na lena padega.",
+  "If you’re the one, you don’t need to do anything.",
+  "Aap hi ho toh koi bhi kaam karne ki jaroorat nahi hai.",
+  "If you’re the concerned one, no further action is needed."
+ ],
+ "Theek hai, dhanyavaad, surakshit rahiye.": [
+  "Sure, thanks! Stay safe, ok?",
+  "Theek hai, shukriya, apna khayal rakhna.",
+  "Alright, thank you. Stay protected, buddy.",
+  "Theek hai, dhanyavaad, apna surakshit rahiye.",
+  "Sure thing, thanks, keep yourself safe."
+ ],
+ "Thank you, have a good day.": [
+  "Thanks, have a great day!",
+  "Thank you, take care and have a nice day ahead.",
+  "Dhanyavaad, aapka din shubh ho!",
+  "Thank you, wishing you a lovely day ahead!",
+  "Thanks a lot! Have a wonderful day!",
+  "Shukriya, apka din achha bante rahen!"
+ ]
+}

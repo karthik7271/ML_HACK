@@ -23,8 +23,15 @@ uv run python -m dadi.seed           # optional: simulated past calls so the net
 uv run uvicorn dadi.app:app --port 8765
 ```
 
-Open http://localhost:8765 in **Chrome**, press **Incoming call**, and play the scammer: speak Hinglish into the
-mic, or type. Dadi answers aloud.
+Open http://localhost:8765 in **Chrome**. Then either:
+- press **▶ Watch a demo call**, and an AI scammer (following a real scam script, with fake details) calls Dadi. Both
+  speak aloud in neural Hindi voices; or
+- press **Incoming call** and play the scammer yourself: speak Hinglish into the mic, or type.
+
+Docker (the same image runs on Hugging Face Spaces):
+```bash
+docker build -t dadi . && docker run -p 7860:7860 --env-file .env dadi
+```
 
 Dadi works with **no API key**, using scripted lines. For LLM-written lines, copy `.env.example` to `.env` and
 add a key for any **free** provider. Dadi tries them in order and moves to the next one on errors or rate limits:
@@ -49,15 +56,15 @@ caller speech ──► browser speech-to-text (en-IN / hi-IN)
                         │ text over WebSocket
                         ▼
       ┌─────────── CallSession (dadi/session.py) ───────────┐
-      │ 1. Detector: P(scam | transcript so far)            │  screening → engaged (≥0.8)
-      │    + scam type + manipulation tactics               │            → handoff (<0.3 after 2 turns)
+      │ 1. Detector: P(scam | transcript so far)            │  screening → engaged (≥0.85)
+      │    + scam type + manipulation tactics               │            → handoff (<0.05 after 2 turns)
       │ 2. Extractor: spoken-number/UPI normalisation       │
       │ 3. Bandit: choose stalling move (Thompson sampling) │
       │ 4. Persona: LLM or scripted Hinglish line           │
       └──────────────────────────────────────────────────────┘
                         │
                         ▼
-browser text-to-speech (Dadi's voice) + live dashboard
+neural text-to-speech (Edge hi-IN voices, streamed; browser voice fallback) + live dashboard
 on hang-up: call saved → scam-network graph → cybercrime report draft
 ```
 
@@ -65,7 +72,7 @@ on hang-up: call saved → scam-network graph → cybercrime report draft
 |---|---|
 | `dadi/data/generate.py` | Synthetic Hinglish scam and genuine-call transcripts (7 scam types, 9 kinds of genuine call, including hard negatives), with noise that imitates speech-to-text errors |
 | `dadi/detector.py` | Char + word TF-IDF combined with multilingual MiniLM sentence embeddings, feeding three logistic-regression heads: scam/genuine, scam type, and tactics (multi-label) |
-| `dadi/train.py` | Training plus evaluation on held-out phrasings, per turn and per call |
+| `dadi/train.py` | Training, call-policy thresholds tuned on a disjoint validation split, and evaluation on held-out phrasings |
 | `dadi/extract.py` | Normalises identifiers read out aloud (English/Hindi/Devanagari digits, "double", "at the rate"), then extracts them |
 | `dadi/tactics.py` | Contextual Thompson-sampling bandit with a global prior shared across scam types |
 | `dadi/llm.py` | Access to free LLM providers (Groq, Gemini, OpenRouter, Ollama), with automatic fallback |
@@ -73,22 +80,45 @@ on hang-up: call saved → scam-network graph → cybercrime report draft
 | `dadi/data/augment.py` | LLM paraphrases of each script line; each one stays on the same side of the train/test split as its source |
 | `dadi/network.py` | Graph of calls and identifiers; connected components with 2+ calls become rings |
 | `dadi/report.py` | Draft complaint for the National Cyber Crime Reporting Portal |
+| `dadi/scammer.py` | Simulated scammer for demo calls (LLM-driven, or scripted without an LLM), using fake details only |
+| `dadi/voice.py` | Streaming neural text-to-speech |
+| `dadi/eval_roleplay.py` | Scores the detector on real role-played calls labelled in the app |
 
 ## Results (held-out synthetic set)
 
-Test calls are built from **phrasings the model never saw in training**: each move's phrasings are split 75/25
-before any calls are generated. See `models/metrics.json`.
+**How the test is kept honest:**
+- Each move's hand-written phrasings are split 75/25 into train and test before any calls are generated.
+- LLM paraphrases stay on the same side as the phrasing they came from, so every test call uses sentences the model
+  never saw in training.
+- The takeover (engage) and hand-back (handoff) thresholds are chosen on a separate validation split, disjoint from
+  both train and test.
+- The final model is then refit on train + validation.
 
-| Features | ROC AUC | Precision @0.8 | Scams caught | False alarms (genuine calls) | Scam-type acc. | Tactics micro-F1 |
+Full numbers are in `models/metrics.json`.
+
+**What matters in the app is the call outcome.** Dadi either takes the call over (**engaged**), hands it back to you
+(**handoff**), or keeps politely screening. The worst mistake is handing a scammer to you.
+
+| Model (same 1,000 test calls) | Scams engaged | **Scams handed to you** | **Genuine calls taken over** | ROC AUC | Precision @0.8 | Scam-type acc. |
 |---|---|---|---|---|---|---|
-| TF-IDF only | 0.951 | 0.892 | 95.7% | 23.3% | 50.6% | 0.468 |
-| Embeddings only | 0.868 | 0.859 | 89.5% | 27.6% | 70.8% | 0.591 |
-| **Hybrid (default)** | 0.939 | **0.940** | 95.5% | **16.9%** | 63.0% | 0.532 |
+| Day 1: 177 hand-written lines, fixed thresholds | 83.3% | 4.2% | 17.3% | 0.897 | 0.858 | 64.1% |
+| **Final: + 1,271 LLM paraphrases + hard negatives + tuned thresholds** | 78.1% | **0.0%** | **2.3%** | **0.964** | **0.981** | **71.4%** |
 
-The median scam is detected on the **first** caller utterance. Server-side latency per turn is about 20–60 ms on an M1 Pro.
+The scams that aren't engaged stay in *screening*, where Dadi still stalls politely instead of handing the call over.
+The median scam is detected on the **first** caller utterance. Per-turn server latency is about 20–60 ms for
+detection, plus about 0.5–1 s for Dadi's LLM reply (Groq).
 
-**Known limitation:** the data is synthetic and has few phrasings per move, which drives the false-alarm rate.
-Next steps: LLM paraphrase augmentation, and a role-played evaluation set recorded by volunteers.
+**How we got there:**
+1. **Features.** On the first data, TF-IDF matched surface wording (AUC 0.951, but 23% false alarms) and
+   embeddings captured meaning (70.8% scam-type accuracy). The hybrid combined both.
+2. **Error analysis.** Most false alarms came from genuine police, bank-branch, college-fee and utility calls.
+3. **More data.** We added hard negatives: genuine calls that send you to official channels ("come to the branch",
+   "the bank never asks for OTP"). An LLM paraphrased every line 6 ways.
+4. **Thresholds.** Engage and handoff thresholds were tuned on validation, with genuine calls taken over capped at 5%.
+
+**Known limitations:**
+- The data is synthetic. Real-world numbers will come from the role-play set below.
+- The per-utterance tactic tagger is weak on rare tactics (OTP / PIN requests).
 
 ## Real-world evaluation (role-play)
 

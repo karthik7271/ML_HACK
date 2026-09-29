@@ -105,7 +105,8 @@ class Persona:
         last = next((h["text"] for h in reversed(history) if h["role"] == "caller"), "")
         if not self.llm.available:
             return self.fallback(tactic, last), "scripted"
-        examples = "\n".join(f"- {e.format(word='UPI')}" for e in self.rng.sample(FALLBACK[tactic], 2))
+        word = _pick_word(last)
+        examples = "\n".join(f"- {e.format(word=word)}" for e in self.rng.sample(FALLBACK[tactic], 2))
         system = (f"{SYSTEM_PROMPT}\n\nLikely scam type: {scam_type or 'unknown'}.\n"
                   f"Your move for THIS reply ({tactic}): {TACTICS[tactic]}\n"
                   f"Style examples for this move (do not copy them, react to what the caller just said):\n{examples}")

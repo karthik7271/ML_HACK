@@ -23,13 +23,20 @@ let prevTactics = {}, prevIntel = new Set();
 
 /* ---------- call lifecycle ---------- */
 
-$("btn-call").onclick = () => {
+let demo = false;
+
+function startCall(isDemo) {
   if (ws) return;
+  demo = isDemo;
   ws = new WebSocket(`${location.protocol === "https:" ? "wss" : "ws"}://${location.host}/ws/call`);
-  ws.onopen = () => ws.send(JSON.stringify({ type: "start" }));
+  ws.onopen = () => ws.send(JSON.stringify({ type: "start", demo: isDemo, scam_type: isDemo ? $("demo-type").value || null : null }));
   ws.onmessage = (e) => handle(JSON.parse(e.data));
   ws.onclose = () => { ws = null; setIdle(); };
-};
+}
+
+$("btn-call").onclick = () => startCall(false);
+$("btn-demo").onclick = () => startCall(true);
+const nextDemoTurn = () => demo && ws && ws.readyState === 1 && ws.send(JSON.stringify({ type: "auto_next" }));
 
 $("btn-end").onclick = () => ws && ws.send(JSON.stringify({ type: "end" }));
 
@@ -51,15 +58,20 @@ function handle(m) {
     $("transcript").innerHTML = "";
     prevTactics = {}; prevIntel = new Set(); wasted = 0; engaged = false;
     $("mode").textContent = `voice: ${m.persona_mode}`;
-    ["btn-mic", "btn-end", "typed", "btn-send"].forEach((id) => ($(id).disabled = false));
-    $("btn-call").disabled = true;
+    ["btn-end"].concat(demo ? [] : ["btn-mic", "typed", "btn-send"]).forEach((id) => ($(id).disabled = false));
+    $("btn-call").disabled = $("btn-demo").disabled = true;
     lastCallId = m.call_id;
     render(m);
-    startMic();
+    if (demo) { addSystem("Demo call: an AI scammer is calling Dadi."); nextDemoTurn(); }
+    else startMic();
+  } else if (m.type === "caller_line") {
+    addMsg("caller", m.text);
+    enqueue(() => speak(m.text, "scammer"));
+    if (m.hangup) enqueue(async () => ws && ws.send(JSON.stringify({ type: "end" })));
   } else if (m.type === "dadi") {
     addMsg("dadi", m.text, m.move, m.source);
     render(m);
-    speak(m.text);
+    enqueue(() => speak(m.text, "dadi")).then(nextDemoTurn);
   } else if (m.type === "ended") {
     stopMic();
     clearInterval(wastedTimer);
@@ -79,7 +91,8 @@ function setIdle() {
   stopMic();
   clearInterval(wastedTimer);
   ["btn-mic", "btn-end", "typed", "btn-send"].forEach((id) => ($(id).disabled = true));
-  $("btn-call").disabled = false;
+  $("btn-call").disabled = $("btn-demo").disabled = false;
+  demo = false;
   setState("idle");
 }
 
@@ -253,30 +266,63 @@ function listen() {
 $("btn-mic").onclick = () => (micOn ? stopMic() : startMic());
 $("lang").onchange = () => { if (recog) { recog.onend = null; recog.abort(); recog = null; listen(); } };
 
-/* ---------- speech out (Dadi) ---------- */
+/* ---------- speech out (Dadi + demo scammer) ---------- */
 
-let voice = null;
+// Lines are spoken strictly one after another (scammer, then Dadi, ...).
+let speechQueue = Promise.resolve();
+function enqueue(fn) {
+  speechQueue = speechQueue.then(fn).catch(() => {});
+  return speechQueue;
+}
+
+let browserVoice = null;
 function pickVoice() {
   const vs = speechSynthesis.getVoices();
-  voice = vs.find((v) => v.lang === "hi-IN") || vs.find((v) => v.lang === "en-IN") || vs.find((v) => /female/i.test(v.name)) || vs[0];
+  browserVoice = vs.find((v) => v.lang === "hi-IN") || vs.find((v) => v.lang === "en-IN") || vs[0];
 }
-speechSynthesis.onvoiceschanged = pickVoice;
-pickVoice();
+if ("speechSynthesis" in window) { speechSynthesis.onvoiceschanged = pickVoice; pickVoice(); }
 
-function speak(text) {
-  if (!("speechSynthesis" in window)) return;
+// Never let a stuck audio element or a blocked autoplay freeze the call.
+const speechBudget = (text) => 2500 + text.length * 90;
+const withTimeout = (p, ms) => Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error("timeout")), ms))]);
+
+function speakBrowser(text, who) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, speechBudget(text));
+    if (!("speechSynthesis" in window)) return resolve();
+    const u = new SpeechSynthesisUtterance(text);
+    if (browserVoice) { u.voice = browserVoice; u.lang = browserVoice.lang; }
+    u.rate = who === "dadi" ? 0.88 : 1.05;
+    u.pitch = who === "dadi" ? 1.05 : 0.8;
+    u.onend = u.onerror = resolve;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  });
+}
+
+// Neural voice streamed from the server; browser voice if that fails.
+function speakNeural(text, who) {
+  return new Promise((resolve, reject) => {
+    const audio = new Audio(`/api/tts?who=${who}&text=${encodeURIComponent(text)}`);
+    audio.onended = resolve;
+    audio.onerror = reject;
+    audio.play().catch(reject);
+  });
+}
+
+async function speak(text, who = "dadi") {
   speaking = true;
-  if (recog) { recog.onend = null; recog.abort(); recog = null; }   // don't transcribe Dadi herself
-  const u = new SpeechSynthesisUtterance(text);
-  if (voice) { u.voice = voice; u.lang = voice.lang; }
-  u.rate = 0.88;
-  u.pitch = 1.05;
-  $("avatar").classList.add("talking");
-  const done = () => { speaking = false; $("avatar").classList.remove("talking"); listen(); };
-  u.onend = done;
-  u.onerror = done;
-  speechSynthesis.cancel();
-  speechSynthesis.speak(u);
+  if (recog) { recog.onend = null; recog.abort(); recog = null; }   // don't transcribe the speakers
+  if (who === "dadi") $("avatar").classList.add("talking");
+  try {
+    await withTimeout(speakNeural(text, who), speechBudget(text) + 4000);
+  } catch {
+    await speakBrowser(text, who);
+  } finally {
+    speaking = false;
+    $("avatar").classList.remove("talking");
+    if (!demo) listen();
+  }
 }
 
 /* ---------- report ---------- */

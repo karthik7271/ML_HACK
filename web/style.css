@@ -155,3 +155,5 @@ dialog pre { white-space: pre-wrap; font-family: "JetBrains Mono", monospace; fo
 .labeller { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center;
   background: var(--card); border: 1px dashed var(--line); border-radius: 10px; padding: 8px; font-size: 12px; }
 .labeller button, .labeller select { padding: 5px 9px; font-size: 12px; }
+
+#btn-demo { background: var(--accent); color: #1a1308; border-color: var(--accent); }
