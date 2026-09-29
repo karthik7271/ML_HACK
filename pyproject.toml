@@ -1,0 +1,25 @@
+[project]
+name = "dadi"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.141.1",
+    "joblib>=1.6.0",
+    "networkx>=3.7",
+    "numpy>=2.5.3",
+    "openai>=3.19.2",
+    "python-dotenv>=1.2.3",
+    "scikit-learn>=1.9.1",
+    "sentence-transformers>=6.1.0",
+    "uvicorn[standard]>=0.53.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

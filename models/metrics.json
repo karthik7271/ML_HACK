@@ -1,0 +1,24 @@
+{
+  "features": "hybrid",
+  "embedder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "prefix_roc_auc": 0.9386,
+  "prefix_f1@0.5": 0.8367,
+  "prefix_precision@0.8": 0.94,
+  "prefix_recall@0.8": 0.82,
+  "call_scam_caught_rate": 0.9553,
+  "call_median_turns_to_detect": 1.0,
+  "call_caught_by_turn_2": 0.7918,
+  "call_legit_false_alarm_rate": 0.1687,
+  "scam_type_accuracy": 0.6304,
+  "tactics_micro_f1": 0.532,
+  "tactics_per_label_f1": {
+    "authority": 0.7305,
+    "credential_request": 0.1139,
+    "fear": 0.3357,
+    "payment_request": 0.7821,
+    "reward_lure": 0.4124,
+    "secrecy": 0.6007,
+    "urgency": 0.2714
+  },
+  "n_test_calls": 1000
+}

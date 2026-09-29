@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dadi: the AI grandma who scams the scammers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo">दादी</span>
+      <div>
+        <h1>Dadi</h1>
+        <p>The AI grandma who wastes scammers' time and collects their mule accounts</p>
+      </div>
+    </div>
+    <div class="totals">
+      <div><b id="tot-wasted">0m</b><span>scammer time wasted</span></div>
+      <div><b id="tot-calls">0</b><span>scam calls taken</span></div>
+      <div><b id="tot-ids">0</b><span>identifiers captured</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="phone card">
+      <div class="phone-top">
+        <div class="avatar" id="avatar">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="58" fill="#f6d7b0"/>
+            <path d="M18 52 Q60 -8 102 52 Q96 30 60 26 Q24 30 18 52Z" fill="#d9d9d9"/>
+            <circle cx="60" cy="20" r="12" fill="#d9d9d9"/>
+            <circle cx="43" cy="60" r="11" fill="none" stroke="#5a3b1c" stroke-width="3"/>
+            <circle cx="77" cy="60" r="11" fill="none" stroke="#5a3b1c" stroke-width="3"/>
+            <line x1="54" y1="60" x2="66" y2="60" stroke="#5a3b1c" stroke-width="3"/>
+            <circle cx="43" cy="60" r="3" fill="#3b2a1a"/><circle cx="77" cy="60" r="3" fill="#3b2a1a"/>
+            <circle cx="60" cy="47" r="3.5" fill="#c0392b"/>
+            <path id="mouth" d="M46 86 Q60 96 74 86" fill="none" stroke="#8e3b2e" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h2>Kamla Devi, 78</h2>
+          <p class="sub">Lucknow · slightly hard of hearing · infinite stories</p>
+          <div class="pill" id="state-pill">idle</div>
+          <div class="mode" id="mode"></div>
+        </div>
+      </div>
+
+      <div class="transcript" id="transcript">
+        <div class="empty">Press <b>Incoming call</b>, then play the scammer: speak into the mic or type below.</div>
+      </div>
+
+      <div class="controls">
+        <button id="btn-call" class="primary">📞 Incoming call</button>
+        <button id="btn-mic" disabled>🎙️ Mic off</button>
+        <select id="lang" title="Speech recognition language">
+          <option value="en-IN">English / Hinglish</option>
+          <option value="hi-IN">हिन्दी</option>
+        </select>
+        <button id="btn-end" class="danger" disabled>Scammer hangs up</button>
+      </div>
+      <form id="typer" class="typer">
+        <input id="typed" placeholder="Type what the scammer says…" autocomplete="off" disabled />
+        <button disabled id="btn-send">Send</button>
+      </form>
+    </section>
+
+    <section class="dash">
+      <div class="card gauge-card">
+        <h3>Scam detector</h3>
+        <div class="gauge">
+          <svg viewBox="0 0 200 110">
+            <path d="M15 100 A85 85 0 0 1 185 100" class="track"/>
+            <path d="M15 100 A85 85 0 0 1 185 100" class="fill" id="gauge-fill"/>
+          </svg>
+          <div class="gauge-num" id="gauge-num">0%</div>
+        </div>
+        <div class="type" id="scam-type">Listening…</div>
+        <div id="type-bars" class="bars"></div>
+      </div>
+
+      <div class="card wasted-card">
+        <h3>Scammer time wasted</h3>
+        <div class="wasted" id="wasted">00:00</div>
+        <div class="sub">Every minute here is a minute they're not scamming someone else.</div>
+      </div>
+
+      <div class="card">
+        <h3>Manipulation tactics detected</h3>
+        <div id="tactics" class="chips"><span class="muted">none yet</span></div>
+      </div>
+
+      <div class="card intel-card">
+        <h3>Captured intel <span class="muted">(for the cybercrime report)</span></h3>
+        <div id="intel" class="intel"><span class="muted">nothing yet</span></div>
+        <button id="btn-report" disabled>📄 Draft cybercrime.gov.in report</button>
+      </div>
+
+      <div class="card brain-card">
+        <h3>Dadi's brain <span class="muted">(Thompson-sampling bandit: P(scammer keeps talking))</span></h3>
+        <div id="brain" class="bars"></div>
+      </div>
+
+      <div class="card graph-card">
+        <h3>Scam network <span class="muted">(calls linked by shared UPI / phone / account)</span></h3>
+        <svg id="graph"></svg>
+        <div id="rings" class="rings"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="report-dlg">
+    <div class="dlg-head">
+      <h3>Draft complaint: review before submitting</h3>
+      <div>
+        <button id="btn-copy">Copy</button>
+        <button id="btn-download">Download</button>
+        <button id="btn-close">Close</button>
+      </div>
+    </div>
+    <pre id="report-text"></pre>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
