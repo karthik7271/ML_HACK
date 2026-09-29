@@ -51,6 +51,18 @@ def score_calls(det: Detector, calls: list[dict]) -> list[tuple[str, list[float]
     return [(c["label"], [det.predict(p).scam_prob for p in prefixes(c)]) for c in calls]
 
 
+def choose_tactic_thresholds(det: Detector, calls: list[dict]) -> dict[str, float]:
+    """Per-tactic probability cutoff that maximises F1 on validation utterances."""
+    utts = [(u["text"], set(u["tactics"])) for c in calls if c["label"] == "scam" for u in c["turns"]]
+    probs = det.tactics_model.predict_proba([t for t, _ in utts])
+    out = {}
+    for i, label in enumerate(det.tactic_labels):
+        y = np.array([label in s for _, s in utts])
+        scores = [(f1_score(y, probs[:, i] >= th, zero_division=0), th) for th in np.arange(0.1, 0.95, 0.05)]
+        out[label] = round(float(max(scores)[1]), 2)
+    return out
+
+
 def choose_thresholds(scored: list[tuple[str, list[float]]]) -> tuple[float, float, dict]:
     """Pick (engage_at, handoff_below) on validation calls: keep false alarms under
     MAX_FALSE_ALARM, then hand as few scammers to the user as possible, then
@@ -142,15 +154,17 @@ def main() -> None:
     splits = generate_splits(args.n, args.seed, augment=not args.no_augment, val_frac=0.2)
     det = Detector.train(splits["train"], args.features, args.embedder)
     engage_at, handoff_below, val_policy = choose_thresholds(score_calls(det, splits["val"]))
+    tactic_thresholds = choose_tactic_thresholds(det, splits["val"])
     # Thresholds are fixed now; refit on train + validation for the final model.
     det = Detector.train(splits["train"] + splits["val"], args.features, args.embedder)
-    det.engage_at, det.handoff_below = engage_at, handoff_below
+    det.engage_at, det.handoff_below, det.tactic_thresholds = engage_at, handoff_below, tactic_thresholds
     det.save(args.out)
     test = splits["test"]
     n_paras = sum(len(v) for v in load_paraphrases().values()) if not args.no_augment else 0
     metrics = {"features": args.features, "embedder": args.embedder if args.features != "tfidf" else None,
                "llm_paraphrases": n_paras,
                "engage_at": det.engage_at, "handoff_below": det.handoff_below,
+               "tactic_thresholds": det.tactic_thresholds,
                "policy_validation": val_policy,
                "policy_test": policy_rates(score_calls(det, test), det.engage_at, det.handoff_below),
                **evaluate(det, test)}

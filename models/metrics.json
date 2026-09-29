@@ -4,6 +4,15 @@
   "llm_paraphrases": 1271,
   "engage_at": 0.85,
   "handoff_below": 0.05,
+  "tactic_thresholds": {
+    "authority": 0.2,
+    "credential_request": 0.1,
+    "fear": 0.35,
+    "payment_request": 0.45,
+    "reward_lure": 0.1,
+    "secrecy": 0.1,
+    "urgency": 0.25
+  },
   "policy_validation": {
     "scam_engaged": 0.697,
     "scam_handed_to_user": 0.0141,
@@ -28,14 +37,14 @@
   "n_test_calls": 1000,
   "n_scam_calls": 479,
   "n_legit_calls": 521,
-  "tactics_micro_f1": 0.5613,
+  "tactics_micro_f1": 0.7113,
   "tactics_per_label_f1": {
-    "authority": 0.5844,
-    "credential_request": 0.0,
-    "fear": 0.5156,
-    "payment_request": 0.8436,
-    "reward_lure": 0.5318,
-    "secrecy": 0.3733,
-    "urgency": 0.5667
+    "authority": 0.7289,
+    "credential_request": 0.5313,
+    "fear": 0.5308,
+    "payment_request": 0.87,
+    "reward_lure": 0.843,
+    "secrecy": 0.7323,
+    "urgency": 0.5701
   }
 }

@@ -83,6 +83,8 @@ on hang-up: call saved → scam-network graph → cybercrime report draft
 | `dadi/scammer.py` | Simulated scammer for demo calls (LLM-driven, or scripted without an LLM), using fake details only |
 | `dadi/voice.py` | Streaming neural text-to-speech |
 | `dadi/eval_roleplay.py` | Scores the detector on real role-played calls labelled in the app |
+| `scripts/deploy_space.py` | One-command deploy to a Hugging Face Space |
+| `docs/` | Devpost write-up and demo-video script |
 
 ## Results (held-out synthetic set)
 
@@ -99,10 +101,10 @@ Full numbers are in `models/metrics.json`.
 **What matters in the app is the call outcome.** Dadi either takes the call over (**engaged**), hands it back to you
 (**handoff**), or keeps politely screening. The worst mistake is handing a scammer to you.
 
-| Model (same 1,000 test calls) | Scams engaged | **Scams handed to you** | **Genuine calls taken over** | ROC AUC | Precision @0.8 | Scam-type acc. |
-|---|---|---|---|---|---|---|
-| Day 1: 177 hand-written lines, fixed thresholds | 83.3% | 4.2% | 17.3% | 0.897 | 0.858 | 64.1% |
-| **Final: + 1,271 LLM paraphrases + hard negatives + tuned thresholds** | 78.1% | **0.0%** | **2.3%** | **0.964** | **0.981** | **71.4%** |
+| Model (same 1,000 test calls) | Scams engaged | **Scams handed to you** | **Genuine calls taken over** | ROC AUC | Precision @0.8 | Scam-type acc. | Tactic micro-F1 |
+|---|---|---|---|---|---|---|---|
+| Day 1: 177 hand-written lines, fixed thresholds | 83.3% | 4.2% | 17.3% | 0.897 | 0.858 | 64.1% | 0.449 |
+| **Final: + 1,271 LLM paraphrases + hard negatives + tuned thresholds** | 78.1% | **0.0%** | **2.3%** | **0.964** | **0.981** | **71.4%** | **0.711** |
 
 The scams that aren't engaged stay in *screening*, where Dadi still stalls politely instead of handing the call over.
 The median scam is detected on the **first** caller utterance. Per-turn server latency is about 20–60 ms for
@@ -115,10 +117,13 @@ detection, plus about 0.5–1 s for Dadi's LLM reply (Groq).
 3. **More data.** We added hard negatives: genuine calls that send you to official channels ("come to the branch",
    "the bank never asks for OTP"). An LLM paraphrased every line 6 ways.
 4. **Thresholds.** Engage and handoff thresholds were tuned on validation, with genuine calls taken over capped at 5%.
+5. **Tactics.** The tactic heads use class-balanced training and a threshold per tactic tuned on validation. Micro-F1
+   rose from 0.56 to 0.71; OTP/PIN requests rose from 0.07 to 0.53.
 
 **Known limitations:**
 - The data is synthetic. Real-world numbers will come from the role-play set below.
-- The per-utterance tactic tagger is weak on rare tactics (OTP / PIN requests).
+- The tactic tagger reads one sentence at a time, so "OTP bata dijiye" alone is ambiguous: genuine delivery calls say
+  it too. The call-level detector uses the whole conversation and catches these calls.
 
 ## Real-world evaluation (role-play)
 
@@ -130,6 +135,15 @@ in the transcript panel: **It was a scam** (with its type) or **It was genuine**
 ```bash
 uv run python -m dadi.eval_roleplay     # writes models/metrics_roleplay.json
 ```
+
+## Deploy (Hugging Face Spaces, free)
+
+```bash
+HF_TOKEN=hf_... uv run python scripts/deploy_space.py --space <hf-username>/dadi [--copy-secrets]
+```
+
+`--copy-secrets` stores your LLM keys from `.env` as private Space secrets. Without any key, the Space uses scripted
+lines.
 
 ## Safety and ethics
 

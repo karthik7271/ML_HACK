@@ -81,9 +81,10 @@ class Prediction:
 
 
 class Detector:
-    # Call-policy thresholds, tuned on validation calls by dadi.train.
+    # Call-policy and per-tactic thresholds, tuned on validation calls by dadi.train.
     engage_at = 0.8
     handoff_below = 0.3
+    tactic_thresholds: dict[str, float] = {}
 
     def __init__(self, scam: Pipeline, scam_type: Pipeline, tactics: Pipeline, tactic_labels: list[str]):
         self.scam = scam
@@ -113,7 +114,8 @@ class Detector:
         stype.fit(Xt, yt)
         mlb = MultiLabelBinarizer()
         Y = mlb.fit_transform(yu)
-        tactics = Pipeline([("f", featurizer(features, embedder)), ("clf", OneVsRestClassifier(LogisticRegression(C=4.0, max_iter=3000)))])
+        tactics = Pipeline([("f", featurizer(features, embedder)),
+                            ("clf", OneVsRestClassifier(LogisticRegression(C=4.0, max_iter=3000, class_weight="balanced")))])
         tactics.fit(Xu, Y)
         return cls(scam, stype, tactics, list(mlb.classes_))
 
@@ -126,7 +128,8 @@ class Detector:
 
     def tactics(self, utterance: str) -> dict[str, float]:
         probs = self.tactics_model.predict_proba([utterance])[0]
-        return {t: float(v) for t, v in zip(self.tactic_labels, probs) if v >= TACTIC_THRESHOLD}
+        return {t: float(v) for t, v in zip(self.tactic_labels, probs)
+                if v >= self.tactic_thresholds.get(t, TACTIC_THRESHOLD)}
 
     def save(self, path: Path = DEFAULT_PATH) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
