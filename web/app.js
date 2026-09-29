@@ -69,6 +69,7 @@ function handle(m) {
     } else {
       addSystem("Call ended.");
     }
+    addLabeller(m.call_id);
     ws.close();
     refreshGlobal();
   }
@@ -166,6 +167,22 @@ function addSystem(text) {
   div.className = "empty";
   div.style.margin = "8px auto";
   div.textContent = text;
+  $("transcript").appendChild(div);
+  $("transcript").scrollTop = $("transcript").scrollHeight;
+}
+
+function addLabeller(callId) {
+  const div = document.createElement("div");
+  div.className = "labeller";
+  div.innerHTML = `<span>Label this call for evaluation:</span>
+    <select>${Object.entries(SCAM_LABEL).map(([k, v]) => `<option value="${k}">${v}</option>`).join("")}</select>
+    <button data-l="scam">It was a scam</button><button data-l="legit">It was genuine</button>`;
+  div.querySelectorAll("button").forEach((b) => (b.onclick = async () => {
+    const body = { label: b.dataset.l, scam_type: b.dataset.l === "scam" ? div.querySelector("select").value : null };
+    const r = await fetch(`/api/label/${callId}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const j = await r.json();
+    div.innerHTML = r.ok ? `<span>Saved ✓ (${j.labelled_calls} labelled calls in the evaluation set)</span>` : `<span>${esc(j.detail || "error")}</span>`;
+  }));
   $("transcript").appendChild(div);
   $("transcript").scrollTop = $("transcript").scrollHeight;
 }

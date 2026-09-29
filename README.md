@@ -90,6 +90,17 @@ The median scam is detected on the **first** caller utterance. Server-side laten
 **Known limitation:** the data is synthetic and has few phrasings per move, which drives the false-alarm rate.
 Next steps: LLM paraphrase augmentation, and a role-played evaluation set recorded by volunteers.
 
+## Real-world evaluation (role-play)
+
+The synthetic test set only measures phrasings we wrote ourselves. To test on real speech, volunteers play
+scammers and genuine callers (family, delivery, bank branch) into the app. After each call, the operator labels it
+in the transcript panel: **It was a scam** (with its type) or **It was genuine**. Labelled calls are saved to
+`data/roleplay/labelled.jsonl`. Then:
+
+```bash
+uv run python -m dadi.eval_roleplay     # writes models/metrics_roleplay.json
+```
+
 ## Safety and ethics
 
 - **Answer-only:** Dadi never dials anyone. She only answers calls that reach her.

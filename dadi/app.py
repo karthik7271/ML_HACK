@@ -6,17 +6,22 @@ Run:  uv run uvicorn dadi.app:app --reload   then open http://localhost:8000
 from __future__ import annotations
 
 import json
+from collections import OrderedDict
+from datetime import datetime
 from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
 
 load_dotenv()
 
 from dadi import network, report  # noqa: E402
+from dadi.data.generate import SCAM_TYPES  # noqa: E402
 from dadi.detector import DEFAULT_PATH, Detector  # noqa: E402
+from dadi.eval_roleplay import ROLEPLAY  # noqa: E402
 from dadi.persona import Persona  # noqa: E402
 from dadi.session import CallSession, CallStore  # noqa: E402
 from dadi.tactics import TacticBandit  # noqa: E402
@@ -34,7 +39,48 @@ bandit = TacticBandit(DATA / "bandit.json")
 persona = Persona()
 store = CallStore(DATA / "calls.jsonl")
 
+# Caller turns of recently ended calls, kept so the operator can label them
+# for the role-play evaluation set.
+finished: OrderedDict[str, dict] = OrderedDict()
+MAX_FINISHED = 50
+
 app = FastAPI(title="Dadi")
+
+
+def remember(session: CallSession) -> None:
+    finished[session.id] = {
+        "turns": [{"text": h["text"]} for h in session.history if h["role"] == "caller"],
+        "started_at": session.started_at,
+    }
+    while len(finished) > MAX_FINISHED:
+        finished.popitem(last=False)
+
+
+class Label(BaseModel):
+    label: str  # "scam" | "legit"
+    scam_type: str | None = None
+
+
+@app.post("/api/label/{call_id}")
+def label_call(call_id: str, body: Label) -> dict:
+    call = finished.get(call_id)
+    if not call:
+        raise HTTPException(404, "call not found (only calls from this server run can be labelled)")
+    if body.label not in ("scam", "legit") or (body.scam_type and body.scam_type not in SCAM_TYPES):
+        raise HTTPException(422, "bad label")
+    ROLEPLAY.parent.mkdir(parents=True, exist_ok=True)
+    with open(ROLEPLAY, "a") as f:
+        f.write(json.dumps({"id": call_id, "label": body.label,
+                            "scam_type": body.scam_type if body.label == "scam" else None,
+                            "turns": call["turns"], "started_at": call["started_at"],
+                            "labelled_at": datetime.now().isoformat(timespec="seconds")},
+                           ensure_ascii=False) + "\n")
+    finished.pop(call_id)
+    with open(ROLEPLAY) as f:
+        n = sum(1 for line in f if line.strip())
+    return {"ok": True, "labelled_calls": n}
+
+
 app.mount("/static", StaticFiles(directory=WEB), name="static")
 
 
@@ -93,9 +139,11 @@ async def call(ws: WebSocket) -> None:
                 await ws.send_json({"type": "tick", "wasted_s": session.wasted_s})
             elif kind == "end" and session:
                 record = session.end()
+                remember(session)
                 await ws.send_json({"type": "ended", "call_id": session.id, "saved": record is not None,
                                     "wasted_s": record["wasted_s"] if record else 0})
                 session = None
     except WebSocketDisconnect:
         if session:
             session.end()
+            remember(session)

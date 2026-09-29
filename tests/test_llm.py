@@ -58,3 +58,7 @@ def test_no_providers_when_order_is_empty(monkeypatch):
 def test_clean_line_strips_labels_directions_and_rambling():
     raw = 'Dadi: "Arre beta *adjusts glasses* ruko. Chashma kahan hai? Mil gaya. Ab bolo. Aur kya?"'
     assert clean_line(raw) == "Arre beta ruko. Chashma kahan hai? Mil gaya."
+
+
+def test_clean_line_drops_emoji_and_repeated_sentence():
+    assert clean_line("Namaste beta! 🌸 Kaise ho?Kaise ho?") == "Namaste beta! Kaise ho?"

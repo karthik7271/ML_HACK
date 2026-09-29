@@ -42,11 +42,13 @@ def evaluate(det: Detector, calls: list[dict]) -> dict:
             n_scam += 1
             detect_turns.append(fired_at)
             full = " ".join(t["text"] for t in call["turns"])
-            type_true.append(call["scam_type"])
-            type_pred.append(det.predict(full).scam_type)
+            if call.get("scam_type"):
+                type_true.append(call["scam_type"])
+                type_pred.append(det.predict(full).scam_type)
             for turn in call["turns"]:
-                tac_true.append(set(turn["tactics"]))
-                tac_pred.append(set(det.tactics(turn["text"])))
+                if "tactics" in turn:  # role-played calls have no per-turn tactic labels
+                    tac_true.append(set(turn["tactics"]))
+                    tac_pred.append(set(det.tactics(turn["text"])))
         else:
             n_legit += 1
             legit_false_alarms += fired_at is not None
@@ -54,10 +56,11 @@ def evaluate(det: Detector, calls: list[dict]) -> dict:
     y_arr, p_arr = np.array(y), np.array(p)
     caught = [t for t in detect_turns if t is not None]
     labels = det.tactic_labels
-    tt = np.array([[l in s for l in labels] for s in tac_true])
-    tp = np.array([[l in s for l in labels] for s in tac_pred])
-    return {
-        "prefix_roc_auc": round(float(roc_auc_score(y_arr, p_arr)), 4),
+    tt = np.array([[l in s for l in labels] for s in tac_true]).reshape(-1, len(labels))
+    tp = np.array([[l in s for l in labels] for s in tac_pred]).reshape(-1, len(labels))
+    both_classes = len(set(y)) == 2
+    metrics = {
+        "prefix_roc_auc": round(float(roc_auc_score(y_arr, p_arr)), 4) if both_classes else None,
         "prefix_f1@0.5": round(float(f1_score(y_arr, p_arr >= 0.5)), 4),
         "prefix_precision@0.8": round(float(precision_score(y_arr, p_arr >= ALERT)), 4),
         "prefix_recall@0.8": round(float(recall_score(y_arr, p_arr >= ALERT)), 4),
@@ -65,12 +68,16 @@ def evaluate(det: Detector, calls: list[dict]) -> dict:
         "call_median_turns_to_detect": float(np.median(caught)) if caught else None,
         "call_caught_by_turn_2": round(sum(t <= 2 for t in caught) / max(n_scam, 1), 4),
         "call_legit_false_alarm_rate": round(legit_false_alarms / max(n_legit, 1), 4),
-        "scam_type_accuracy": round(float(np.mean([a == b for a, b in zip(type_true, type_pred)])), 4),
-        "tactics_micro_f1": round(float(f1_score(tt, tp, average="micro", zero_division=0)), 4),
-        "tactics_per_label_f1": {l: round(float(f1_score(tt[:, i], tp[:, i], zero_division=0)), 4)
-                                 for i, l in enumerate(labels)},
+        "scam_type_accuracy": round(float(np.mean([a == b for a, b in zip(type_true, type_pred)])), 4) if type_true else None,
         "n_test_calls": len(calls),
+        "n_scam_calls": n_scam,
+        "n_legit_calls": n_legit,
     }
+    if tac_true:
+        metrics["tactics_micro_f1"] = round(float(f1_score(tt, tp, average="micro", zero_division=0)), 4)
+        metrics["tactics_per_label_f1"] = {l: round(float(f1_score(tt[:, i], tp[:, i], zero_division=0)), 4)
+                                           for i, l in enumerate(labels)}
+    return metrics
 
 
 def main() -> None:

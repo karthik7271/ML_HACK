@@ -25,6 +25,9 @@ Rules:
 - NEVER give real personal data. If pushed for an OTP, PIN, card or account number, read out wrong or
   incomplete digits slowly, lose your place, or say the paper is in the other room.
 - Never agree to actually complete a payment; always get stuck just before it.
+- NEVER end or pause the call, never say you will call back later, never tell them to call someone else.
+  Keep them talking: end most replies with a question or an unfinished thought.
+- Call the caller "beta" (never "bhai", "sir" or "dude").
 - No emojis, no stage directions, no quotation marks. Output only what Dadi says."""
 
 FALLBACK: dict[str, list[str]] = {
@@ -102,8 +105,10 @@ class Persona:
         last = next((h["text"] for h in reversed(history) if h["role"] == "caller"), "")
         if not self.llm.available:
             return self.fallback(tactic, last), "scripted"
+        examples = "\n".join(f"- {e.format(word='UPI')}" for e in self.rng.sample(FALLBACK[tactic], 2))
         system = (f"{SYSTEM_PROMPT}\n\nLikely scam type: {scam_type or 'unknown'}.\n"
-                  f"Your move for THIS reply ({tactic}): {TACTICS[tactic]}")
+                  f"Your move for THIS reply ({tactic}): {TACTICS[tactic]}\n"
+                  f"Style examples for this move (do not copy them, react to what the caller just said):\n{examples}")
         messages = [{"role": "system", "content": system}]
         for h in history[-12:]:
             messages.append({"role": "user" if h["role"] == "caller" else "assistant", "content": h["text"]})
@@ -119,6 +124,10 @@ def clean_line(text: str) -> str:
     """Keep what Dadi would actually say: no speaker labels, quotes, stage directions, or essays."""
     text = re.sub(r"^\s*(dadi|kamla devi|kamla)\s*:\s*", "", text.strip(), flags=re.I)
     text = re.sub(r"[*(\[][^*)\]]*[*)\]]", "", text)  # *sighs* (laughs) [pause]
+    text = EMOJI_RE.sub("", text)
     text = re.sub(r"\s+", " ", text).strip().strip('"').strip()
-    sentences = re.split(r"(?<=[.!?])\s+", text)
-    return " ".join(sentences[:3]).strip()
+    sentences = [x.strip() for x in re.split(r"(?<=[.!?])\s*", text) if x.strip()]
+    return " ".join(list(dict.fromkeys(sentences))[:3])
+
+
+EMOJI_RE = re.compile("[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F\u200d]")
