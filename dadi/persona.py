@@ -1,15 +1,17 @@
 """Dadi's voice: turns (tactic, conversation) into her next line.
 
-With DADI_LLM_API_KEY set, an OpenAI-compatible endpoint (Featherless by
-default) writes the line, steered by the tactic the bandit picked. Without a
-key, or if the LLM is slow or errors, a scripted fallback keeps the demo alive.
+When a free LLM provider is configured (see dadi/llm.py: Groq, Gemini,
+OpenRouter or local Ollama), it writes the line, steered by the tactic the
+bandit picked. With no provider, or if every provider is slow or failing, a
+scripted fallback keeps the demo alive.
 """
 
 from __future__ import annotations
 
-import os
 import random
+import re
 
+from dadi.llm import LLM
 from dadi.tactics import TACTICS
 
 SYSTEM_PROMPT = """You are "Dadi", Kamla Devi, a sweet, chatty 78-year-old grandmother from Lucknow on a phone call.
@@ -80,20 +82,13 @@ def _pick_word(text: str) -> str:
 
 
 class Persona:
-    def __init__(self, rng: random.Random | None = None):
+    def __init__(self, rng: random.Random | None = None, llm: LLM | None = None):
         self.rng = rng or random.Random()
-        self.api_key = os.getenv("DADI_LLM_API_KEY")
-        self.base_url = os.getenv("DADI_LLM_BASE_URL", "https://api.featherless.ai/v1")
-        self.model = os.getenv("DADI_LLM_MODEL", "meta-llama/Meta-Llama-3.1-8B-Instruct")
-        self.timeout = float(os.getenv("DADI_LLM_TIMEOUT", "6"))
-        self._client = None
-        if self.api_key:
-            from openai import AsyncOpenAI
-            self._client = AsyncOpenAI(api_key=self.api_key, base_url=self.base_url, timeout=self.timeout)
+        self.llm = llm if llm is not None else LLM()
 
     @property
     def mode(self) -> str:
-        return f"llm:{self.model}" if self._client else "scripted"
+        return f"llm: {self.llm.description}" if self.llm.available else "scripted"
 
     def screening_line(self) -> str:
         return self.rng.choice(SCREENING)
@@ -103,19 +98,27 @@ class Persona:
         return line[0].upper() + line[1:]
 
     async def reply(self, tactic: str, history: list[dict], scam_type: str | None) -> tuple[str, str]:
-        """Returns (line, source) where source is 'llm' or 'scripted'."""
+        """Returns (line, source): source is the LLM provider name, or 'scripted'."""
         last = next((h["text"] for h in reversed(history) if h["role"] == "caller"), "")
-        if not self._client:
+        if not self.llm.available:
             return self.fallback(tactic, last), "scripted"
-        messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+        system = (f"{SYSTEM_PROMPT}\n\nLikely scam type: {scam_type or 'unknown'}.\n"
+                  f"Your move for THIS reply ({tactic}): {TACTICS[tactic]}")
+        messages = [{"role": "system", "content": system}]
         for h in history[-12:]:
             messages.append({"role": "user" if h["role"] == "caller" else "assistant", "content": h["text"]})
-        messages.append({"role": "system", "content":
-                         f"Likely scam type: {scam_type or 'unknown'}. Your move this turn ({tactic}): {TACTICS[tactic]}"})
         try:
-            resp = await self._client.chat.completions.create(
-                model=self.model, messages=messages, max_tokens=90, temperature=0.9)
-            text = (resp.choices[0].message.content or "").strip().strip('"')
-            return (text, "llm") if text else (self.fallback(tactic, last), "scripted")
-        except Exception:
+            text, provider = await self.llm.complete(messages, max_tokens=300)
+        except RuntimeError:
             return self.fallback(tactic, last), "scripted"
+        text = clean_line(text)
+        return (text, provider) if text else (self.fallback(tactic, last), "scripted")
+
+
+def clean_line(text: str) -> str:
+    """Keep what Dadi would actually say: no speaker labels, quotes, stage directions, or essays."""
+    text = re.sub(r"^\s*(dadi|kamla devi|kamla)\s*:\s*", "", text.strip(), flags=re.I)
+    text = re.sub(r"[*(\[][^*)\]]*[*)\]]", "", text)  # *sighs* (laughs) [pause]
+    text = re.sub(r"\s+", " ", text).strip().strip('"').strip()
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    return " ".join(sentences[:3]).strip()

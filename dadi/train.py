@@ -16,7 +16,7 @@ from pathlib import Path
 import numpy as np
 from sklearn.metrics import f1_score, precision_score, recall_score, roc_auc_score
 
-from dadi.data.generate import generate
+from dadi.data.generate import generate, load_paraphrases
 from dadi.detector import DEFAULT_EMBEDDER, DEFAULT_PATH, Detector, prefixes
 
 ALERT = 0.8  # probability at which Dadi takes over the call
@@ -80,12 +80,15 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=DEFAULT_PATH)
     ap.add_argument("--features", choices=["tfidf", "embed", "hybrid"], default="hybrid")
     ap.add_argument("--embedder", default=DEFAULT_EMBEDDER)
+    ap.add_argument("--no-augment", action="store_true", help="ignore LLM paraphrases")
     args = ap.parse_args()
 
-    train, test = generate(args.n, args.seed)
+    train, test = generate(args.n, args.seed, augment=not args.no_augment)
     det = Detector.train(train, args.features, args.embedder)
     det.save(args.out)
+    n_paras = sum(len(v) for v in load_paraphrases().values()) if not args.no_augment else 0
     metrics = {"features": args.features, "embedder": args.embedder if args.features != "tfidf" else None,
+               "llm_paraphrases": n_paras,
                **evaluate(det, test)}
     metrics_path = args.out.parent / "metrics.json"
     metrics_path.write_text(json.dumps(metrics, indent=2) + "\n")

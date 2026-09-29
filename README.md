@@ -26,8 +26,21 @@ uv run uvicorn dadi.app:app --port 8765
 Open http://localhost:8765 in **Chrome**, press **Incoming call**, and play the scammer: speak Hinglish into the
 mic, or type. Dadi answers aloud.
 
-Dadi works without any API key, using scripted lines. For LLM-written lines, copy `.env.example` to `.env` and
-set `DADI_LLM_API_KEY`. Any OpenAI-compatible endpoint works; the default is Featherless.
+Dadi works with **no API key**, using scripted lines. For LLM-written lines, copy `.env.example` to `.env` and
+add a key for any **free** provider. Dadi tries them in order and moves to the next one on errors or rate limits:
+
+| Provider | Free tier | Setup |
+|---|---|---|
+| Groq (default, fastest) | about 1,000 requests/day on gpt-oss / Qwen | `GROQ_API_KEY` from console.groq.com |
+| Google Gemini | Flash-Lite, about 500 requests/day | `GEMINI_API_KEY` from aistudio.google.com |
+| OpenRouter | `:free` models | `OPENROUTER_API_KEY` |
+| Ollama (offline) | unlimited, runs locally | `ollama pull qwen2.5:3b` (no key needed) |
+
+Check which providers work: `uv run python -m dadi.llm`
+
+To add more training data (optional, uses the LLM):
+`uv run python -m dadi.data.augment` writes paraphrases of every script line to `dadi/data/paraphrases.json`.
+Then retrain with `uv run python -m dadi.train`.
 
 ## How it works
 
@@ -55,7 +68,9 @@ on hang-up: call saved → scam-network graph → cybercrime report draft
 | `dadi/train.py` | Training plus evaluation on held-out phrasings, per turn and per call |
 | `dadi/extract.py` | Normalises identifiers read out aloud (English/Hindi/Devanagari digits, "double", "at the rate"), then extracts them |
 | `dadi/tactics.py` | Contextual Thompson-sampling bandit with a global prior shared across scam types |
-| `dadi/persona.py` | Dadi's system prompt, the LLM call, and scripted lines used when the LLM is unavailable |
+| `dadi/llm.py` | Access to free LLM providers (Groq, Gemini, OpenRouter, Ollama), with automatic fallback |
+| `dadi/persona.py` | Dadi's system prompt, output cleanup, and scripted lines used when no LLM is available |
+| `dadi/data/augment.py` | LLM paraphrases of each script line; each one stays on the same side of the train/test split as its source |
 | `dadi/network.py` | Graph of calls and identifiers; connected components with 2+ calls become rings |
 | `dadi/report.py` | Draft complaint for the National Cyber Crime Reporting Portal |
 

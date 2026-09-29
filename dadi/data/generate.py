@@ -273,15 +273,36 @@ def _split_pool(variants: list, rng: random.Random, test_frac: float) -> tuple[l
     return train, test
 
 
-def build_pools(seed: int, test_frac: float = 0.25) -> dict[str, dict]:
+PARAPHRASES = Path(__file__).resolve().parent / "paraphrases.json"
+
+
+def load_paraphrases() -> dict[str, list[str]]:
+    return json.loads(PARAPHRASES.read_text()) if PARAPHRASES.exists() else {}
+
+
+def _expand(variants: list, paras: dict[str, list[str]]) -> list:
+    """Add each variant's LLM paraphrases to the same pool (train or test) as the variant."""
+    out = list(variants)
+    for v in variants:
+        if isinstance(v, tuple):
+            out += [(p, v[1]) for p in paras.get(v[0], [])]
+        else:
+            out += paras.get(v, [])
+    return out
+
+
+def build_pools(seed: int, test_frac: float = 0.25, augment: bool = True) -> dict[str, dict]:
     rng = random.Random(seed)
+    paras = load_paraphrases() if augment else {}
     pools: dict[str, dict] = {"train": {"scam": {}, "legit": {}}, "test": {"scam": {}, "legit": {}}}
     for stype, stages in SCAMS.items():
         tr, te = zip(*(_split_pool(stage, rng, test_frac) for stage in stages))
-        pools["train"]["scam"][stype], pools["test"]["scam"][stype] = list(tr), list(te)
+        pools["train"]["scam"][stype] = [_expand(v, paras) for v in tr]
+        pools["test"]["scam"][stype] = [_expand(v, paras) for v in te]
     for ltype, stages in LEGIT.items():
         tr, te = zip(*(_split_pool(stage, rng, test_frac) for stage in stages))
-        pools["train"]["legit"][ltype], pools["test"]["legit"][ltype] = list(tr), list(te)
+        pools["train"]["legit"][ltype] = [_expand(v, paras) for v in tr]
+        pools["test"]["legit"][ltype] = [_expand(v, paras) for v in te]
     return pools
 
 
@@ -303,8 +324,8 @@ def make_call(pool: dict, rng: random.Random, scam_ratio: float = 0.5) -> dict:
     return {"label": "legit", "scam_type": None, "legit_type": ltype, "turns": turns}
 
 
-def generate(n: int, seed: int = 7, test_frac: float = 0.25) -> tuple[list[dict], list[dict]]:
-    pools = build_pools(seed, test_frac)
+def generate(n: int, seed: int = 7, test_frac: float = 0.25, augment: bool = True) -> tuple[list[dict], list[dict]]:
+    pools = build_pools(seed, test_frac, augment)
     rng = random.Random(seed + 1)
     n_test = int(n * test_frac)
     train = [make_call(pools["train"], rng) for _ in range(n - n_test)]

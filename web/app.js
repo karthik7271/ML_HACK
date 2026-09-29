@@ -155,7 +155,7 @@ function addMsg(role, text, move, source) {
   const div = document.createElement("div");
   div.className = `msg ${role}`;
   const meta = role === "dadi" && move
-    ? `<span class="meta">move: <b>${MOVE_LABEL[move] || move}</b>${source === "scripted" ? " · scripted" : ""}</span>` : "";
+    ? `<span class="meta">move: <b>${MOVE_LABEL[move] || move}</b>${source ? ` · ${source}` : ""}</span>` : "";
   div.innerHTML = `${role === "caller" ? highlight(esc(text)) : esc(text)}${meta}`;
   box.appendChild(div);
   box.scrollTop = box.scrollHeight;

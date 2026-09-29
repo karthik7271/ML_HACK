@@ -28,7 +28,7 @@ class Clock:
 
 
 def make(tmp_path, monkeypatch):
-    monkeypatch.delenv("DADI_LLM_API_KEY", raising=False)
+    monkeypatch.setenv("DADI_LLM_ORDER", "none")
     clock = Clock()
     s = CallSession(FakeDetector(), TacticBandit(tmp_path / "b.json", rng=random.Random(0)),
                     Persona(rng=random.Random(0)), CallStore(tmp_path / "calls.jsonl"), clock=clock)
